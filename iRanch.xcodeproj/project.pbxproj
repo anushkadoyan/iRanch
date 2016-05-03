@@ -17,8 +17,9 @@
 		84455EBD1CD1A4E600A857F2 /* iRanchUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 84455EBC1CD1A4E600A857F2 /* iRanchUITests.m */; };
 		84455ECF1CD1D39900A857F2 /* Restaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = 84455ECE1CD1D39900A857F2 /* Restaurant.m */; };
 		84C41D4A1CD5F42400CC05EA /* RanchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C41D481CD5F42400CC05EA /* RanchModel.m */; };
-		84C41D4D1CD5FEC900CC05EA /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C41D4C1CD5FEC900CC05EA /* TableViewController.m */; };
+		84C41D4D1CD5FEC900CC05EA /* ListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C41D4C1CD5FEC900CC05EA /* ListTableViewController.m */; };
 		84C41D501CD602CD00CC05EA /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C41D4F1CD602CD00CC05EA /* AddViewController.m */; };
+		84C41D531CD8699400CC05EA /* RanchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C41D521CD8699400CC05EA /* RanchViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,10 +60,12 @@
 		84455ECE1CD1D39900A857F2 /* Restaurant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Restaurant.m; sourceTree = "<group>"; };
 		84C41D481CD5F42400CC05EA /* RanchModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RanchModel.m; sourceTree = "<group>"; };
 		84C41D491CD5F42400CC05EA /* RanchModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RanchModel.h; sourceTree = "<group>"; };
-		84C41D4B1CD5FEC900CC05EA /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
-		84C41D4C1CD5FEC900CC05EA /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		84C41D4B1CD5FEC900CC05EA /* ListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListTableViewController.h; sourceTree = "<group>"; };
+		84C41D4C1CD5FEC900CC05EA /* ListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListTableViewController.m; sourceTree = "<group>"; };
 		84C41D4E1CD602CD00CC05EA /* AddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddViewController.h; sourceTree = "<group>"; };
 		84C41D4F1CD602CD00CC05EA /* AddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddViewController.m; sourceTree = "<group>"; };
+		84C41D511CD8699400CC05EA /* RanchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RanchViewController.h; sourceTree = "<group>"; };
+		84C41D521CD8699400CC05EA /* RanchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RanchViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,12 +164,14 @@
 		84C41D441CD5F29000CC05EA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				84C41D4B1CD5FEC900CC05EA /* TableViewController.h */,
-				84C41D4C1CD5FEC900CC05EA /* TableViewController.m */,
+				84C41D4B1CD5FEC900CC05EA /* ListTableViewController.h */,
+				84C41D4C1CD5FEC900CC05EA /* ListTableViewController.m */,
 				84455E9D1CD1A4E500A857F2 /* ViewController.h */,
 				84455E9E1CD1A4E500A857F2 /* ViewController.m */,
 				84C41D4E1CD602CD00CC05EA /* AddViewController.h */,
 				84C41D4F1CD602CD00CC05EA /* AddViewController.m */,
+				84C41D511CD8699400CC05EA /* RanchViewController.h */,
+				84C41D521CD8699400CC05EA /* RanchViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -334,8 +339,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				84455ECF1CD1D39900A857F2 /* Restaurant.m in Sources */,
-				84C41D4D1CD5FEC900CC05EA /* TableViewController.m in Sources */,
+				84C41D4D1CD5FEC900CC05EA /* ListTableViewController.m in Sources */,
 				84455E9F1CD1A4E500A857F2 /* ViewController.m in Sources */,
+				84C41D531CD8699400CC05EA /* RanchViewController.m in Sources */,
 				84C41D501CD602CD00CC05EA /* AddViewController.m in Sources */,
 				84455E9C1CD1A4E500A857F2 /* AppDelegate.m in Sources */,
 				84C41D4A1CD5F42400CC05EA /* RanchModel.m in Sources */,

@@ -13,7 +13,7 @@
 
 + (instancetype) sharedModel;
 - (NSUInteger) numberOfRestaurants;
-- (NSDictionary *) restaurantAtIndex: (NSUInteger) index;
+- (Restaurant *) restaurantAtIndex: (NSUInteger) index;
 - (void) removeRestaurantAtIndex: (NSUInteger) index;
 - (void) insertRestaurant: (Restaurant *) restaurant;
 - (void) insertRestaurant: (NSString *) name

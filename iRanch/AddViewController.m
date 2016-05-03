@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *cancelButton;
 @property (weak, nonatomic) IBOutlet UITextField *restNameField;
 @property (weak, nonatomic) IBOutlet UITextView *restAboutView;
+@property (weak, nonatomic) IBOutlet UITextView *aboutField;
 
 @end
 
@@ -21,6 +22,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.aboutField.text = self.restAboutPlaceholder;
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -28,6 +31,9 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)cancelClicked:(id)sender {
+    if(self.completionHandler) {
+        self.completionHandler(nil);
+    }
     [self dismissViewControllerAnimated:YES completion:nil];
 
 }
@@ -48,11 +54,21 @@
 }
 - (IBAction)saveClicked:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
-
+    if(self.completionHandler) {
+        self.completionHandler(self.aboutField.text);
+    }
 }
 
 
-
+-(BOOL) textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    if(self.completionHandler) {
+        self.completionHandler(self.aboutField.text);
+        
+    }
+    self.aboutField.text=nil;
+    return YES;
+}
 
 
 /*

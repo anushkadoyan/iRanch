@@ -6,7 +6,7 @@
 //  Copyright © 2016 Anush Kadoyan. All rights reserved.
 //
 
-#import "TableViewController.h"
+#import "ListTableViewController.h"
 #import "Restaurant.h"
 
 #import "AddViewController.h"

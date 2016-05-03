@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+typedef void (^addCompletionHandler) (NSString* restAboutPlaceholder);
 
 @interface AddViewController : UIViewController
+
+@property (strong, nonatomic) NSString  *restAboutPlaceholder;
+@property (copy,nonatomic) addCompletionHandler completionHandler;
 
 @end
