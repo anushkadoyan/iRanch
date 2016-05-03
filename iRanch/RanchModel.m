@@ -70,6 +70,9 @@ static NSString *const kRanchPList = @"Ranch.plist";
 }
 
 
+-(Restaurant *) getRestaurantByName: (NSString) name {
+    
+}
 - (Restaurant *) restaurantAtIndex: (NSUInteger) index {
     // check index
     

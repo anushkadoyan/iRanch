@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-typedef void (^addCompletionHandler) (NSString* restAboutPlaceholder);
+typedef void (^addCompletionHandler) (NSString* name,NSString* restAboutPlaceholder,int rating);
 
 @interface AddViewController : UIViewController
+@property (strong, nonatomic) NSString *name;
 
+@property (strong, nonatomic) NSString *about;
+//rate 1-5
+@property int rating;
 @property (strong, nonatomic) NSString  *restAboutPlaceholder;
 @property (copy,nonatomic) addCompletionHandler completionHandler;
 

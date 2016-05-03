@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+
+typedef void (^ranchCompletionHandler) (NSString* name,NSString* about,int rating);
+
+
 @interface RanchViewController : UIViewController
+
+@property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) NSString *about;
+@property int rating;
+@property (copy,nonatomic) ranchCompletionHandler completionHandler;
 
 @end

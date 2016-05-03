@@ -8,6 +8,7 @@
 
 #import "ListTableViewController.h"
 #import "Restaurant.h"
+#import "RanchViewController.h"
 
 #import "AddViewController.h"
 #import "RanchModel.h"
@@ -133,18 +134,24 @@
 */
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     AddViewController *addVC = segue.destinationViewController;
-//    addVC.enterText = @"Enter the question and answer for a new flashcard";
-//    addVC.fieldPlaceholder = @"Please enter something";
-//    addVC.completionHandler = ^(NSString *question, NSString *answer) {
-//        if(question!=nil) {
-//            [self.model insertFlashcard:question answer:answer];
-//            [self.tableView reloadData];
-//            
-//        }
-//        
-//        [self dismissViewControllerAnimated:YES completion:nil];
-//    };
-            [self dismissViewControllerAnimated:YES completion:nil];
+//    addVC.restAboutPlaceholder = @"Write something ranchy!";
+    addVC.name = @"Hot Wings";
+    addVC.rating = 5;
+    addVC.completionHandler = ^(NSString* name,NSString* restAboutPlaceholder,int rating ) {
+        if(name!=nil && restAboutPlaceholder!=nil && ![restAboutPlaceholder isEqual:@"Write something ranchy!"]) {
+            [self.model insertRestaurant:name about:restAboutPlaceholder rating:rating];
+            [self.tableView reloadData];
+            
+        }
+        
+        [self dismissViewControllerAnimated:YES completion:nil];
+    };
+    RanchViewController *ranchVC = segue.destinationViewController;
+    NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:selectedIndexPath];
+    ranchVC.name = cell.textLabel.text;
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
 
 }
 

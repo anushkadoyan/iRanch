@@ -23,6 +23,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.aboutField.text = self.restAboutPlaceholder;
+    self.restNameField.placeholder = self.name;
 
 }
 
@@ -32,7 +33,7 @@
 }
 - (IBAction)cancelClicked:(id)sender {
     if(self.completionHandler) {
-        self.completionHandler(nil);
+        self.completionHandler(nil,nil,5);
     }
     [self dismissViewControllerAnimated:YES completion:nil];
 
@@ -55,7 +56,8 @@
 - (IBAction)saveClicked:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
     if(self.completionHandler) {
-        self.completionHandler(self.aboutField.text);
+        // ADD RATING
+        self.completionHandler(self.restNameField.text,self.aboutField.text,5);
     }
 }
 
@@ -63,10 +65,13 @@
 -(BOOL) textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
     if(self.completionHandler) {
-        self.completionHandler(self.aboutField.text);
+        // ADD RATING
+        self.completionHandler(self.restNameField.text,self.aboutField.text,5);
         
     }
     self.aboutField.text=nil;
+    self.restNameField.text=nil;
+
     return YES;
 }
 

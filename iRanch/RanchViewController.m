@@ -8,7 +8,9 @@
 
 #import "RanchViewController.h"
 
-@interface RanchViewController ()
+@interface RanchViewController ()<UITextFieldDelegate, UITextViewDelegate>
+@property (weak, nonatomic) IBOutlet UILabel *restName;
+@property (weak, nonatomic) IBOutlet UITextView *restAbout;
 
 @end
 
@@ -16,6 +18,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.restName.text = self.name;
+    self.restAbout.text = self.about;
+    
     // Do any additional setup after loading the view.
 }
 
