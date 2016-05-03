@@ -70,8 +70,18 @@ static NSString *const kRanchPList = @"Ranch.plist";
 }
 
 
--(Restaurant *) getRestaurantByName: (NSString) name {
-    
+-(Restaurant *) getRestaurantByName: (NSString*) name {
+    NSString *query = name;
+    BOOL found = NO;
+    for (Restaurant *rest in _restaurants) {
+        if ([rest.name isEqualToString:query]) {
+            found = YES;
+            return rest;
+
+            break;
+        }
+    }
+    return nil;
 }
 - (Restaurant *) restaurantAtIndex: (NSUInteger) index {
     // check index

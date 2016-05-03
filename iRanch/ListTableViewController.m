@@ -150,7 +150,8 @@
     NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
     UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:selectedIndexPath];
     ranchVC.name = cell.textLabel.text;
-    
+    NSLog([self.model getRestaurantByName:cell.textLabel.text].name);
+
     [self dismissViewControllerAnimated:YES completion:nil];
 
 }

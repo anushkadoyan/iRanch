@@ -19,6 +19,8 @@
 - (void) insertRestaurant: (NSString *) name
                     about: (NSString *) about
                    rating: (int) rating ;
+-(Restaurant *) getRestaurantByName: (NSString*) name;
+
 - (void) insertRestaurant: (Restaurant *) restaurant
                  atIndex: (NSUInteger) index;
 //- (void) insertRestaurant: (NSString *) restaurant
