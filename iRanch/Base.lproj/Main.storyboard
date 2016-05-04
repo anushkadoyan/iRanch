@@ -72,11 +72,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="kah-Wu-cuw">
                         <barButtonItem key="leftBarButtonItem" systemItem="edit" id="Jpt-Ym-lp1">
+                            <color key="tintColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="editClicked:" destination="5bM-CD-hSZ" id="hWF-eS-htW"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Tls-cx-UXD">
+                            <color key="tintColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="Zki-0I-V2K" kind="presentation" id="hqt-CV-IsS"/>
                             </connections>
@@ -100,27 +102,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LDG-Me-ONz">
-                                <rect key="frame" x="20" y="114" width="560" height="167"/>
+                                <rect key="frame" x="20" y="181" width="560" height="184"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="167" id="NXd-Bx-XMK"/>
+                                    <constraint firstAttribute="height" constant="184" id="NXd-Bx-XMK"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fW1-a3-IxH">
-                                <rect key="frame" x="20" y="289" width="560" height="291"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comment on the ranch:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RRB-Lu-IyU">
+                                <rect key="frame" x="20" y="460" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hfh-nJ-zbk">
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                                 <items>
                                     <navigationItem id="uIM-ps-4Id">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="mV6-LB-eQ4">
+                                            <color key="tintColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <action selector="cancelClicked:" destination="Zki-0I-V2K" id="YwW-ZA-00U"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="bZH-vV-C2W">
+                                            <color key="tintColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <action selector="saveClicked:" destination="Zki-0I-V2K" id="aXG-bM-SiZ"/>
                                             </connections>
@@ -129,26 +133,80 @@
                                 </items>
                             </navigationBar>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Restaurant Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zBa-up-s5X">
-                                <rect key="frame" x="20" y="76" width="560" height="30"/>
+                                <rect key="frame" x="20" y="111" width="560" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="CHH-ZF-Hdo">
+                                <rect key="frame" x="18" y="407" width="509" height="31"/>
+                                <color key="tintColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the name of the restaurant:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GMu-bD-v3T">
+                                <rect key="frame" x="20" y="91" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add an image:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rlp-ne-TEA">
+                                <rect key="frame" x="20" y="161" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rate the ranch:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C8Y-Ro-qBi">
+                                <rect key="frame" x="20" y="387" width="560" height="21"/>
+                                <color key="tintColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d0Z-6e-kcN">
+                                <rect key="frame" x="533" y="407" width="47" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fW1-a3-IxH">
+                                <rect key="frame" x="20" y="480" width="560" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="LDG-Me-ONz" firstAttribute="top" secondItem="zBa-up-s5X" secondAttribute="bottom" constant="8" symbolic="YES" id="0r4-U3-Any"/>
+                            <constraint firstItem="LDG-Me-ONz" firstAttribute="top" secondItem="zBa-up-s5X" secondAttribute="bottom" constant="40" id="0r4-U3-Any"/>
                             <constraint firstAttribute="bottom" secondItem="fW1-a3-IxH" secondAttribute="bottom" constant="20" symbolic="YES" id="1Cq-Sw-A7t"/>
                             <constraint firstItem="hfh-nJ-zbk" firstAttribute="centerX" secondItem="LDG-Me-ONz" secondAttribute="centerX" id="4ty-pC-nSa"/>
                             <constraint firstItem="zBa-up-s5X" firstAttribute="leading" secondItem="LDG-Me-ONz" secondAttribute="leading" id="6Gt-Te-IqW"/>
-                            <constraint firstItem="fW1-a3-IxH" firstAttribute="top" secondItem="LDG-Me-ONz" secondAttribute="bottom" constant="8" symbolic="YES" id="6ai-xu-bgX"/>
+                            <constraint firstItem="fW1-a3-IxH" firstAttribute="top" secondItem="LDG-Me-ONz" secondAttribute="bottom" constant="115" id="6ai-xu-bgX"/>
                             <constraint firstItem="hfh-nJ-zbk" firstAttribute="leading" secondItem="0bX-xL-uxy" secondAttribute="leading" id="7df-OV-968"/>
-                            <constraint firstItem="LDG-Me-ONz" firstAttribute="top" secondItem="hfh-nJ-zbk" secondAttribute="bottom" constant="50" id="B4g-oN-682"/>
+                            <constraint firstItem="RRB-Lu-IyU" firstAttribute="trailing" secondItem="fW1-a3-IxH" secondAttribute="trailing" id="7q6-oN-nnO"/>
+                            <constraint firstItem="GMu-bD-v3T" firstAttribute="leading" secondItem="zBa-up-s5X" secondAttribute="leading" id="9eW-Up-lHR"/>
+                            <constraint firstItem="LDG-Me-ONz" firstAttribute="top" secondItem="hfh-nJ-zbk" secondAttribute="bottom" constant="117" id="B4g-oN-682"/>
+                            <constraint firstItem="RRB-Lu-IyU" firstAttribute="leading" secondItem="fW1-a3-IxH" secondAttribute="leading" id="BWs-4f-EkG"/>
                             <constraint firstItem="LDG-Me-ONz" firstAttribute="trailing" secondItem="fW1-a3-IxH" secondAttribute="trailing" id="Oms-1D-esl"/>
+                            <constraint firstItem="CHH-ZF-Hdo" firstAttribute="trailing" secondItem="RRB-Lu-IyU" secondAttribute="trailing" constant="-55" id="RcW-h1-cWj"/>
+                            <constraint firstItem="rlp-ne-TEA" firstAttribute="top" secondItem="zBa-up-s5X" secondAttribute="bottom" constant="20" id="SCf-ck-VEc"/>
+                            <constraint firstItem="GMu-bD-v3T" firstAttribute="trailing" secondItem="zBa-up-s5X" secondAttribute="trailing" id="V6P-q1-Huj"/>
+                            <constraint firstItem="d0Z-6e-kcN" firstAttribute="top" secondItem="CHH-ZF-Hdo" secondAttribute="top" id="a7X-Ul-1ZB"/>
+                            <constraint firstItem="d0Z-6e-kcN" firstAttribute="trailing" secondItem="C8Y-Ro-qBi" secondAttribute="trailing" id="chW-Kl-nT5"/>
+                            <constraint firstItem="C8Y-Ro-qBi" firstAttribute="trailing" secondItem="CHH-ZF-Hdo" secondAttribute="trailing" constant="55" id="ddX-UL-aD6"/>
                             <constraint firstItem="LDG-Me-ONz" firstAttribute="leading" secondItem="0bX-xL-uxy" secondAttribute="leadingMargin" id="drg-WM-ru5"/>
+                            <constraint firstItem="GMu-bD-v3T" firstAttribute="top" secondItem="hfh-nJ-zbk" secondAttribute="bottom" constant="27" id="eF0-Om-GhH"/>
+                            <constraint firstItem="C8Y-Ro-qBi" firstAttribute="leading" secondItem="CHH-ZF-Hdo" secondAttribute="leading" id="eqd-oN-I15"/>
+                            <constraint firstItem="CHH-ZF-Hdo" firstAttribute="leading" secondItem="RRB-Lu-IyU" secondAttribute="leading" id="hHM-Ea-fbl"/>
+                            <constraint firstItem="CHH-ZF-Hdo" firstAttribute="top" secondItem="C8Y-Ro-qBi" secondAttribute="bottom" constant="-1" id="j1B-C6-skB"/>
                             <constraint firstItem="hfh-nJ-zbk" firstAttribute="top" secondItem="4xG-jc-wSY" secondAttribute="bottom" id="mUZ-3C-E2h"/>
                             <constraint firstItem="LDG-Me-ONz" firstAttribute="leading" secondItem="fW1-a3-IxH" secondAttribute="leading" id="mgF-Kh-1F0"/>
+                            <constraint firstItem="rlp-ne-TEA" firstAttribute="trailing" secondItem="zBa-up-s5X" secondAttribute="trailing" id="nXO-2I-WfO"/>
                             <constraint firstAttribute="trailing" secondItem="hfh-nJ-zbk" secondAttribute="trailing" id="oVG-UH-gui"/>
                             <constraint firstItem="zBa-up-s5X" firstAttribute="trailing" secondItem="LDG-Me-ONz" secondAttribute="trailing" id="pB6-af-rD1"/>
+                            <constraint firstItem="d0Z-6e-kcN" firstAttribute="leading" secondItem="CHH-ZF-Hdo" secondAttribute="trailing" constant="8" symbolic="YES" id="tGQ-g7-SfN"/>
+                            <constraint firstItem="d0Z-6e-kcN" firstAttribute="bottom" secondItem="CHH-ZF-Hdo" secondAttribute="bottom" id="tK3-aJ-OUT"/>
+                            <constraint firstItem="RRB-Lu-IyU" firstAttribute="top" secondItem="CHH-ZF-Hdo" secondAttribute="bottom" constant="23" id="uUI-dw-dH8"/>
+                            <constraint firstItem="rlp-ne-TEA" firstAttribute="leading" secondItem="zBa-up-s5X" secondAttribute="leading" id="yXH-NI-yam"/>
+                            <constraint firstItem="C8Y-Ro-qBi" firstAttribute="top" secondItem="LDG-Me-ONz" secondAttribute="bottom" constant="22" id="zQf-cR-Ekw"/>
                         </constraints>
                     </view>
                     <connections>
@@ -307,7 +365,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="OjQ-1X-7vt"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="27"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>

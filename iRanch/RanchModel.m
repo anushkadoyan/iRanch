@@ -14,6 +14,7 @@ static NSString *const kRanchPList = @"Ranch.plist";
 @property (strong, nonatomic) NSMutableArray *restaurants;
 @property NSUInteger currentIndex;
 @property (strong, nonatomic) NSString *filepath;
+@property (strong, nonatomic) NSData *data;
 
 @end
 
@@ -30,7 +31,9 @@ static NSString *const kRanchPList = @"Ranch.plist";
     return _sharedModel;
 }
 -(void) save {
-    [self.restaurants writeToFile:self.filepath atomically:YES];
+    NSLog(@"Saved");
+    _data = [NSKeyedArchiver archivedDataWithRootObject:_restaurants];
+    [self.data writeToFile:self.filepath atomically:YES];
 }
 - (instancetype)init
 {
@@ -39,8 +42,9 @@ static NSString *const kRanchPList = @"Ranch.plist";
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         NSString *documentsDirectory = [paths objectAtIndex:0];
         _filepath = [documentsDirectory stringByAppendingPathComponent:kRanchPList];
-        _restaurants = [NSMutableArray arrayWithContentsOfFile:_filepath];
-        
+       
+        _data = [NSData dataWithContentsOfFile:_filepath];
+        _restaurants = [NSKeyedUnarchiver unarchiveObjectWithData:_data];
         // initialize our properties
         
         if(!_restaurants) {
@@ -49,7 +53,7 @@ static NSString *const kRanchPList = @"Ranch.plist";
             Restaurant *rest1= [[Restaurant alloc] initWithName:@"Hot Wings" about:@"This place has the best ranch!!" rating:10];
             Restaurant *rest2= [[Restaurant alloc] initWithName:@"Conrads" about:@"Yummy and nice texture" rating:7];
             Restaurant *rest3= [[Restaurant alloc] initWithName:@"Domino's" about:@"Gross. I hate it." rating:4];
-            Restaurant *rest4= [[Restaurant alloc] initWithName:@"Taco Bell" about:@"It's okay" rating:5];
+            Restaurant *rest4= [[Restaurant alloc] initWithName:@"Buffalo Wild Wings" about:@"It's okay" rating:5];
             Restaurant *rest5= [[Restaurant alloc] initWithName:@"LA Cafe" about:@"Almost perfect" rating:9];
 
 
@@ -58,6 +62,8 @@ static NSString *const kRanchPList = @"Ranch.plist";
             
             _restaurants  = [[NSMutableArray alloc] initWithObjects:
                            rest1,rest2,rest3,rest4,rest5,nil];
+
+            [self save];
             
         }
     }
@@ -95,6 +101,7 @@ static NSString *const kRanchPList = @"Ranch.plist";
         [self.restaurants removeObjectAtIndex: index];
         
     }
+   NSLog( @"removed");
     [self save];
 }
 

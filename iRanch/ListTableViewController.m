@@ -76,7 +76,11 @@
     Restaurant *rest = [self.model restaurantAtIndex:indexPath.row];
     
     cell.textLabel.text = rest.name;
+    cell.textLabel.font = [UIFont fontWithName:@"Verdana" size:18.0f];
+    //NSLog(@"Documents Directory: %@", [[[NSFileManager defaultManager]
+                                       // URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject]);
     
+
     return cell;
 }
 /*
@@ -150,8 +154,7 @@
     NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
     UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:selectedIndexPath];
     ranchVC.name = cell.textLabel.text;
-    NSLog([self.model getRestaurantByName:cell.textLabel.text].name);
-
+    ranchVC.about = [self.model getRestaurantByName:cell.textLabel.text].about;
     [self dismissViewControllerAnimated:YES completion:nil];
 
 }
