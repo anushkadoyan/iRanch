@@ -32,10 +32,11 @@
 //                     completion:NULL];
 
 
-    UIImagePickerController *imagePickerController = [[UIImagePickerController alloc]init];
-    imagePickerController.delegate = self;
-    imagePickerController.sourceType =  UIImagePickerControllerSourceTypePhotoLibrary;
-    [self presentModalViewController:imagePickerController animated:YES];
+//    UIImagePickerController *imagePickerController = [[UIImagePickerController alloc]init];
+//    imagePickerController.delegate = self;
+//    imagePickerController.sourceType =  UIImagePickerControllerSourceTypePhotoLibrary;
+//    [self presentViewController:imagePickerController animated:YES completion:nil];
+
 }
 - (IBAction)addImageClicked:(id)sender {
     
@@ -65,7 +66,7 @@ picker {
 }
 - (IBAction)cancelClicked:(id)sender {
     if(self.completionHandler) {
-        self.completionHandler(nil,nil,5);
+        self.completionHandler(nil,nil,5,nil);
     }
     [self dismissViewControllerAnimated:YES completion:nil];
 
@@ -89,7 +90,7 @@ picker {
     [self dismissViewControllerAnimated:YES completion:nil];
     if(self.completionHandler) {
         // ADD RATING
-        self.completionHandler(self.restNameField.text,self.aboutField.text,5);
+        self.completionHandler(self.restNameField.text,self.aboutField.text,5,self.imageView.image);
     }
 }
 
@@ -98,7 +99,7 @@ picker {
     [textField resignFirstResponder];
     if(self.completionHandler) {
         // ADD RATING
-        self.completionHandler(self.restNameField.text,self.aboutField.text,5);
+        self.completionHandler(self.restNameField.text,self.aboutField.text,5,self.imageView.image);
         
     }
     self.aboutField.text=nil;

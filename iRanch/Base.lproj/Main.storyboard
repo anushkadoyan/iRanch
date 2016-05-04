@@ -173,7 +173,7 @@
                                     <constraint firstAttribute="height" constant="33" id="8vV-20-Abo"/>
                                 </constraints>
                                 <state key="normal" title="Click to pick an image">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -424,6 +424,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="ranchImage" destination="tRu-jT-kNA" id="1aP-9e-cNz"/>
                         <outlet property="restAbout" destination="bos-Ob-91c" id="J85-DR-Cp8"/>
                         <outlet property="restName" destination="czg-ED-S5E" id="3fF-zg-NT9"/>
                     </connections>

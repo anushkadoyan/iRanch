@@ -7,16 +7,21 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface Restaurant : NSObject <NSCoding>
-@property (strong, nonatomic) NSString *name;
 
+
+@property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *about;
-//rate 1-5
+//rate 1-10
 @property int rating;
+//picture
+@property (assign, nonatomic) UIImage *image;
 
 
 -(id)initWithName:(NSString *)name
             about:(NSString *)about
-           rating:(int)rating;
+            rating:(int)rating
+            image:(UIImage *)image;
 @end

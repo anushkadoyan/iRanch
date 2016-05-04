@@ -20,12 +20,16 @@
 -(id)initWithName:(NSString *)name
             about:(NSString *)about
            rating:(int)rating
+            image:(UIImage *)image
+
 {
     self = [super init];
     if (self) {
         self.name = name;
         self.about = about;
         self.rating = rating;
+        self.image = image;
+
     }
     return self;
 }
@@ -37,6 +41,8 @@
     [encoder encodeObject:self.name forKey:@"name"];
     [encoder encodeObject:self.about forKey:@"about"];
     [encoder encodeInteger:self.rating forKey:@"rating"];
+//    [encoder encodeObject:self.image forKey:@"image"];
+
 
 }
 - (id)initWithCoder:(NSCoder *)decoder {
@@ -45,6 +51,8 @@
         self.name = [decoder decodeObjectForKey:@"name"];
         self.about = [decoder decodeObjectForKey:@"about" ];
         self.rating = [decoder decodeIntForKey:@"rating"];
+//        self.image = [decoder decodeObjectForKey:@"image"];
+
 
 
     }

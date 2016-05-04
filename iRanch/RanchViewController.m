@@ -11,6 +11,7 @@
 @interface RanchViewController ()<UITextFieldDelegate, UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *restName;
 @property (weak, nonatomic) IBOutlet UITextView *restAbout;
+@property (weak, nonatomic) IBOutlet UIImageView *ranchImage;
 
 @end
 
@@ -20,6 +21,7 @@
     [super viewDidLoad];
     self.restName.text = self.name;
     self.restAbout.text = self.about;
+    self.ranchImage.image = self.image;
     
     // Do any additional setup after loading the view.
 }
