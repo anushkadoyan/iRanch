@@ -31,17 +31,17 @@ static NSString *const kRanchPList = @"Ranch.plist";
     return _sharedModel;
 }
 -(void) save {
-    NSLog(@"Saved");
-    NSData *data = UIImagePNGRepresentation(imageview.image);
-    [imageArray addObject:data];
-    [imageArray writeToFile:plistPath atomically:YES];
-    
-    
-    for (Restaurant *resta in _restaurants) {
-        NSData *data = UIImagePNGRepresentation(resta.image);
-
-        
-    }
+//    NSLog(@"Saved");
+//    NSData *data = UIImagePNGRepresentation(imageview.image);
+//    [imageArray addObject:data];
+//    [imageArray writeToFile:plistPath atomically:YES];
+//    
+//    
+//    for (Restaurant *resta in _restaurants) {
+//        NSData *data = UIImagePNGRepresentation(resta.image);
+//        resta.image = data;
+//        
+//    }
     _data = [NSKeyedArchiver archivedDataWithRootObject:_restaurants];
     [self.data writeToFile:self.filepath atomically:YES];
 }

@@ -61,7 +61,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="NhX-An-EUR" kind="show" id="NyC-Xe-ymR"/>
+                                    <segue destination="NhX-An-EUR" kind="show" identifier="showRanch" id="NyC-Xe-ymR"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -80,7 +80,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Tls-cx-UXD">
                             <color key="tintColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <segue destination="Zki-0I-V2K" kind="presentation" id="hqt-CV-IsS"/>
+                                <segue destination="Zki-0I-V2K" kind="presentation" identifier="addRanch" id="hqt-CV-IsS"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

@@ -137,33 +137,38 @@
 }
 */
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    AddViewController *addVC = segue.destinationViewController;
-//    addVC.restAboutPlaceholder = @"Write something ranchy!";
-    addVC.name = @"Hot Wings";
-    addVC.rating = 5;
-    
-    addVC.completionHandler = ^(NSString* name,NSString* restAboutPlaceholder,int rating,UIImage* image ) {
-        // && restAboutPlaceholder!=nil && ![restAboutPlaceholder isEqual:@"Write something ranchy!"]
-        if(name!=nil) {
-            NSLog(@"Sasfd");
-            [self.model insertRestaurant:name about:restAboutPlaceholder rating:rating image:image];
-            [self.tableView reloadData];
+    if ([segue.identifier  isEqual: @"addRanch"]) {
+        AddViewController *addVC = segue.destinationViewController;
+        //    addVC.restAboutPlaceholder = @"Write something ranchy!";
+        addVC.name = @"Hot Wings";
+        addVC.rating = 5;
+        
+        addVC.completionHandler = ^(NSString* name,NSString* restAboutPlaceholder,int rating,UIImage* image ) {
+            // && restAboutPlaceholder!=nil && ![restAboutPlaceholder isEqual:@"Write something ranchy!"]
+            if(name!=nil) {
+                NSLog(@"Sasfd");
+                [self.model insertRestaurant:name about:restAboutPlaceholder rating:rating image:image];
+                [self.tableView reloadData];
+                
+            }
             
-        }
+            [self dismissViewControllerAnimated:YES completion:nil];
+        };
+
+    }
+    else if ([segue.identifier  isEqual: @"showRanch"]) {
+
+        RanchViewController *ranchVC = segue.destinationViewController;
+        NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
+        UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:selectedIndexPath];
+        ranchVC.name = cell.textLabel.text;
+        ranchVC.about = [self.model getRestaurantByName:cell.textLabel.text].about;
+//      ranchVC.image =[self.model getRestaurantByName:cell.textLabel.text].image;
+        ranchVC.completionHandler = ^(NSString* name,NSString* restAboutPlaceholder,int rating,UIImage* image ) {
         
         [self dismissViewControllerAnimated:YES completion:nil];
-    };
-//    RanchViewController *ranchVC = segue.destinationViewController;
-//    NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
-//    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:selectedIndexPath];
-//    ranchVC.name = cell.textLabel.text;
-//    ranchVC.about = [self.model getRestaurantByName:cell.textLabel.text].about;
-////    ranchVC.image =[self.model getRestaurantByName:cell.textLabel.text].image;
-//    ranchVC.completionHandler = ^(NSString* name,NSString* restAboutPlaceholder,int rating,UIImage* image ) {
-//        
-//        [self dismissViewControllerAnimated:YES completion:nil];
-//
-//    };
+        };
+    }
 
 }
 
