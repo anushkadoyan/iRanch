@@ -8,12 +8,13 @@
 
 #import "AddViewController.h"
 
-@interface AddViewController ()<UITextFieldDelegate, UITextViewDelegate>
+@interface AddViewController ()<UITextFieldDelegate, UITextViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *saveButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *cancelButton;
 @property (weak, nonatomic) IBOutlet UITextField *restNameField;
 @property (weak, nonatomic) IBOutlet UITextView *restAboutView;
 @property (weak, nonatomic) IBOutlet UITextView *aboutField;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
 
@@ -25,8 +26,39 @@
     self.aboutField.text = self.restAboutPlaceholder;
     self.restNameField.placeholder = self.name;
 
+//    picker.sourceType =
+//    UIImagePickerControllerSourceTypeCamera;
+//    [self presentViewController:picker animated:YES
+//                     completion:NULL];
+
+
+    UIImagePickerController *imagePickerController = [[UIImagePickerController alloc]init];
+    imagePickerController.delegate = self;
+    imagePickerController.sourceType =  UIImagePickerControllerSourceTypePhotoLibrary;
+    [self presentModalViewController:imagePickerController animated:YES];
+}
+- (IBAction)addImageClicked:(id)sender {
+    
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    picker.allowsEditing = YES;
+    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    [self presentViewController:picker animated:YES completion:NULL];
 }
 
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    UIImage *selectedImage = info[UIImagePickerControllerEditedImage];
+    self.imageView.image = selectedImage;
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+    
+    
+}
+- (void) imagePickerControllerDidCancel: (UIImagePickerController *)
+picker {
+    
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
