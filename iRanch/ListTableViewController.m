@@ -150,9 +150,7 @@
 
                 NSData *imageData = UIImagePNGRepresentation(image);
                 [self.model insertRestaurant:name about:restAboutPlaceholder rating:rating image:imageData];
-                if(image!=nil) {
-                    NSLog(@"not nil");
-                }
+                
                 [self.tableView reloadData];
 
                 
@@ -176,6 +174,16 @@
         ranchVC.rating = r.rating;
         if(r!=nil && r.image!=nil) {
             ranchVC.image =img;
+        }
+        if(r.image==nil) {
+            NSLog(@"is nil");
+            UIImage* defaultImage = [UIImage imageNamed: @"defaultranch"];
+
+//            NSData *defaultData = UIImagePNGRepresentation(defaultImage);
+
+//            r.image = defaultData;
+            ranchVC.image =  defaultImage;
+;
         }
         ranchVC.completionHandler = ^(NSString* name,NSString* restAboutPlaceholder,int rating,NSData* image ){
         

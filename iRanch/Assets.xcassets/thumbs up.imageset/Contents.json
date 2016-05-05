@@ -2,11 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "eating salad.jpg",
+      "filename" : "thumbs up.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "thumbs up@2x.png",
       "scale" : "2x"
     },
     {

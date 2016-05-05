@@ -29,6 +29,7 @@
     self.restNameField.placeholder = self.name;
     self.imageView.image = self.image;
     [self.rateSlider setValue: 5 animated: YES];
+    [self.restNameField becomeFirstResponder];
 
 //    picker.sourceType =
 //    UIImagePickerControllerSourceTypeCamera;
@@ -82,6 +83,9 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 
 }
+
+
+
 - (BOOL) textView: (UITextView *) textView shouldChangeTextInRange: (NSRange) range replacementText: (NSString *)text {
     NSString *changedString = [textView.text stringByReplacingCharactersInRange:range withString:text];
     [self enableSaveButton:self.restNameField.text about:changedString];
@@ -97,6 +101,9 @@
 -(void) enableSaveButton: (NSString *) restNameText about:(NSString *) restAboutText {
     self.saveButton.enabled =(restNameText.length > 0 && restAboutText.length > 0);
 }
+
+
+
 - (IBAction)saveClicked:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
     if(self.completionHandler) {

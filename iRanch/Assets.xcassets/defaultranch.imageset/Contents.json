@@ -2,11 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Bulleted List Filled-75.png",
+      "filename" : "defaultranch.jpeg",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "defaultranch@2x.jpg",
       "scale" : "2x"
     },
     {

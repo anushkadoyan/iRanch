@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *restAbout;
 @property (weak, nonatomic) IBOutlet UIImageView *ranchImage;
 @property (weak, nonatomic) IBOutlet UILabel *ratingLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *rateImage;
 
 @end
 
@@ -23,7 +24,12 @@
     self.restName.text = self.name;
     self.restAbout.text = self.about;
     self.ranchImage.image = self.image;
-
+    if(self.rating>=5) {
+     self.rateImage.image =  [UIImage imageNamed: @"thumbs up.png"];
+    }
+    else {
+        self.rateImage.image =  [UIImage imageNamed: @"thumbs down.png"];
+    }
     self.ratingLabel.text =[NSString stringWithFormat:@"Rating: %i%@",self.rating,@"/10"];
     // Do any additional setup after loading the view.
 }

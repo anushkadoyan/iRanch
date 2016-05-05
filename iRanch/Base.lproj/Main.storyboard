@@ -396,8 +396,8 @@
                                     <constraint firstAttribute="height" constant="180" id="nMP-Me-uVh"/>
                                 </constraints>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bos-Ob-91c">
-                                <rect key="frame" x="20" y="434" width="560" height="146"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bos-Ob-91c">
+                                <rect key="frame" x="20" y="410" width="560" height="133"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -411,36 +411,53 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gtz-D7-BOh">
-                                <rect key="frame" x="20" y="334" width="560" height="61"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gtz-D7-BOh">
+                                <rect key="frame" x="20" y="306" width="436" height="61"/>
                                 <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="22"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comments:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ztu-yh-bzt">
+                                <rect key="frame" x="20" y="390" width="560" height="21"/>
+                                <fontDescription key="fontDescription" name="Verdana" family="Verdana" pointSize="17"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thumbs up" translatesAutoresizingMaskIntoConstraints="NO" id="ETJ-Js-lY9">
+                                <rect key="frame" x="464" y="306" width="116" height="61"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.95145344220000005" blue="0.7399662186" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="ETJ-Js-lY9" firstAttribute="top" secondItem="gtz-D7-BOh" secondAttribute="top" id="6H9-44-Vgv"/>
                             <constraint firstItem="gtz-D7-BOh" firstAttribute="leading" secondItem="bos-Ob-91c" secondAttribute="leading" id="9Ux-bT-WUR"/>
-                            <constraint firstItem="bos-Ob-91c" firstAttribute="top" secondItem="gtz-D7-BOh" secondAttribute="bottom" constant="39" id="AOQ-Er-5Tl"/>
+                            <constraint firstItem="bos-Ob-91c" firstAttribute="top" secondItem="gtz-D7-BOh" secondAttribute="bottom" constant="43" id="AOQ-Er-5Tl"/>
                             <constraint firstItem="tRu-jT-kNA" firstAttribute="top" secondItem="czg-ED-S5E" secondAttribute="bottom" constant="8" symbolic="YES" id="DQM-4K-UOl"/>
-                            <constraint firstItem="bos-Ob-91c" firstAttribute="top" secondItem="tRu-jT-kNA" secondAttribute="bottom" constant="136" id="Q28-XW-plt"/>
+                            <constraint firstItem="ztu-yh-bzt" firstAttribute="top" secondItem="gtz-D7-BOh" secondAttribute="bottom" constant="23" id="DVu-G9-VCJ"/>
+                            <constraint firstItem="bos-Ob-91c" firstAttribute="top" secondItem="tRu-jT-kNA" secondAttribute="bottom" constant="112" id="Q28-XW-plt"/>
+                            <constraint firstItem="ETJ-Js-lY9" firstAttribute="trailing" secondItem="ztu-yh-bzt" secondAttribute="trailing" id="Qgv-Cn-0sn"/>
                             <constraint firstAttribute="trailing" secondItem="GmI-aM-1ag" secondAttribute="trailing" id="Qoo-cv-Ioo"/>
                             <constraint firstItem="GmI-aM-1ag" firstAttribute="bottom" secondItem="FAh-EI-iOe" secondAttribute="bottom" id="U8R-Aw-oiM"/>
-                            <constraint firstAttribute="bottom" secondItem="bos-Ob-91c" secondAttribute="bottom" constant="20" symbolic="YES" id="Y3D-dk-gYQ"/>
+                            <constraint firstItem="ETJ-Js-lY9" firstAttribute="bottom" secondItem="gtz-D7-BOh" secondAttribute="bottom" id="XSc-0d-grk"/>
+                            <constraint firstAttribute="bottom" secondItem="bos-Ob-91c" secondAttribute="bottom" constant="57" id="Y3D-dk-gYQ"/>
                             <constraint firstItem="tRu-jT-kNA" firstAttribute="leading" secondItem="bos-Ob-91c" secondAttribute="leading" id="YSj-Si-4gJ"/>
                             <constraint firstItem="tRu-jT-kNA" firstAttribute="trailing" secondItem="bos-Ob-91c" secondAttribute="trailing" id="fEU-gZ-hfK"/>
                             <constraint firstItem="czg-ED-S5E" firstAttribute="leading" secondItem="tRu-jT-kNA" secondAttribute="leading" id="fb7-Ie-MGY"/>
-                            <constraint firstItem="gtz-D7-BOh" firstAttribute="trailing" secondItem="bos-Ob-91c" secondAttribute="trailing" id="fmH-Cv-5ed"/>
-                            <constraint firstItem="gtz-D7-BOh" firstAttribute="top" secondItem="tRu-jT-kNA" secondAttribute="bottom" constant="36" id="jOO-HQ-7Un"/>
+                            <constraint firstItem="gtz-D7-BOh" firstAttribute="trailing" secondItem="bos-Ob-91c" secondAttribute="trailing" constant="-124" id="fmH-Cv-5ed"/>
+                            <constraint firstItem="gtz-D7-BOh" firstAttribute="top" secondItem="tRu-jT-kNA" secondAttribute="bottom" constant="8" id="jOO-HQ-7Un"/>
                             <constraint firstItem="czg-ED-S5E" firstAttribute="top" secondItem="FAh-EI-iOe" secondAttribute="bottom" constant="8" symbolic="YES" id="lox-G1-jcH"/>
+                            <constraint firstItem="ETJ-Js-lY9" firstAttribute="leading" secondItem="gtz-D7-BOh" secondAttribute="trailing" constant="8" symbolic="YES" id="oJB-71-m5a"/>
                             <constraint firstItem="czg-ED-S5E" firstAttribute="trailing" secondItem="tRu-jT-kNA" secondAttribute="trailing" id="oJe-TQ-0fr"/>
                             <constraint firstItem="czg-ED-S5E" firstAttribute="leading" secondItem="TUN-Du-dT5" secondAttribute="leadingMargin" id="ptj-Lg-kE1"/>
                             <constraint firstItem="GmI-aM-1ag" firstAttribute="leading" secondItem="TUN-Du-dT5" secondAttribute="leading" id="stb-YY-5ZB"/>
+                            <constraint firstItem="ztu-yh-bzt" firstAttribute="trailing" secondItem="gtz-D7-BOh" secondAttribute="trailing" constant="124" id="y0I-WZ-vaw"/>
+                            <constraint firstItem="ztu-yh-bzt" firstAttribute="leading" secondItem="gtz-D7-BOh" secondAttribute="leading" id="zSH-oz-5qr"/>
                             <constraint firstItem="GmI-aM-1ag" firstAttribute="centerX" secondItem="czg-ED-S5E" secondAttribute="centerX" id="zuQ-ch-JG5"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="ranchImage" destination="tRu-jT-kNA" id="1aP-9e-cNz"/>
+                        <outlet property="rateImage" destination="ETJ-Js-lY9" id="O1j-ya-mjw"/>
                         <outlet property="ratingLabel" destination="gtz-D7-BOh" id="zFT-Lx-ie8"/>
                         <outlet property="restAbout" destination="bos-Ob-91c" id="J85-DR-Cp8"/>
                         <outlet property="restName" destination="czg-ED-S5E" id="3fF-zg-NT9"/>
@@ -454,5 +471,6 @@
     <resources>
         <image name="List" width="25" height="25"/>
         <image name="MapMarker" width="25" height="25"/>
+        <image name="thumbs up" width="1052" height="1317"/>
     </resources>
 </document>

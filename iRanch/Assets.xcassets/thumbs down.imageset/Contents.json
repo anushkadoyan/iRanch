@@ -2,11 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Screen Shot 2016-04-27 at 9.14.29 PM.png",
+      "filename" : "thumbs down.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "thumbs down@2x.png",
       "scale" : "2x"
     },
     {
