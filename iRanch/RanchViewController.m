@@ -12,6 +12,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *restName;
 @property (weak, nonatomic) IBOutlet UITextView *restAbout;
 @property (weak, nonatomic) IBOutlet UIImageView *ranchImage;
+@property (weak, nonatomic) IBOutlet UILabel *ratingLabel;
 
 @end
 
@@ -22,7 +23,8 @@
     self.restName.text = self.name;
     self.restAbout.text = self.about;
     self.ranchImage.image = self.image;
-    
+
+    self.ratingLabel.text =[NSString stringWithFormat:@"Rating: %i%@",self.rating,@"/10"];
     // Do any additional setup after loading the view.
 }
 

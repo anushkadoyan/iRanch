@@ -172,17 +172,8 @@
 
         ranchVC.about = r.about;
         
-//        NSData *imageData = UIImagePNGRepresentation(resta.image);
-        
-        
-        
-        
-        
-            UIImage* img = [[UIImage alloc] initWithData:r.image];
-            
-            
-
-        
+        UIImage* img = [[UIImage alloc] initWithData:r.image];
+        ranchVC.rating = r.rating;
         if(r!=nil && r.image!=nil) {
             ranchVC.image =img;
         }

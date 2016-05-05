@@ -15,6 +15,8 @@
 @property (weak, nonatomic) IBOutlet UITextView *restAboutView;
 @property (weak, nonatomic) IBOutlet UITextView *aboutField;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UISlider *rateSlider;
+@property (weak, nonatomic) IBOutlet UILabel *rateLabel;
 
 @end
 
@@ -26,6 +28,8 @@
     self.aboutField.text = self.restAboutPlaceholder;
     self.restNameField.placeholder = self.name;
     self.imageView.image = self.image;
+    [self.rateSlider setValue: 5 animated: YES];
+
 //    picker.sourceType =
 //    UIImagePickerControllerSourceTypeCamera;
 //    [self presentViewController:picker animated:YES
@@ -36,6 +40,14 @@
 //    imagePickerController.delegate = self;
 //    imagePickerController.sourceType =  UIImagePickerControllerSourceTypePhotoLibrary;
 //    [self presentViewController:imagePickerController animated:YES completion:nil];
+
+}
+- (IBAction)sliderChanged:(id)sender {
+    UISlider *slider = (UISlider *)sender;
+    int numberAsInt = (int) (slider.value+0.5f);
+    NSString *newText = [[NSString alloc] initWithFormat:@"%d",numberAsInt];
+    self.rateLabel.text = [NSString stringWithFormat:@"%@%@",newText,@"/10"];
+    self.rating = [self.rateLabel.text intValue];
 
 }
 - (IBAction)addImageClicked:(id)sender {
@@ -55,8 +67,7 @@
     
     
 }
-- (void) imagePickerControllerDidCancel: (UIImagePickerController *)
-picker {
+- (void) imagePickerControllerDidCancel: (UIImagePickerController *)picker {
     
     [picker dismissViewControllerAnimated:YES completion:NULL];
 }
@@ -91,7 +102,7 @@ picker {
     if(self.completionHandler) {
         // ADD RATING
 //        NSData *imageData = UIImagePNGRepresentation(self.imageView.image);
-        self.completionHandler(self.restNameField.text,self.aboutField.text,5,self.imageView.image);
+        self.completionHandler(self.restNameField.text,self.aboutField.text,self.rating,self.imageView.image);
     }
 }
 
@@ -102,7 +113,7 @@ picker {
         // ADD RATING
 //        NSData *imageData = UIImagePNGRepresentation(self.imageView.image);
 
-        self.completionHandler(self.restNameField.text,self.aboutField.text,5,self.imageView.image);
+        self.completionHandler(self.restNameField.text,self.aboutField.text,self.rating,self.imageView.image);
         
     }
     self.aboutField.text=nil;
