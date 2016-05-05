@@ -242,10 +242,10 @@
             </objects>
             <point key="canvasLocation" x="1822" y="-2151"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="n64-4n-Qlc">
             <objects>
-                <viewController id="DYV-aT-vNz" sceneMemberID="viewController">
+                <viewController id="DYV-aT-vNz" customClass="MapViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0vN-Ia-jge"/>
                         <viewControllerLayoutGuide type="bottom" id="11Y-ue-qV6"/>

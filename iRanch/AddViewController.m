@@ -30,7 +30,10 @@
     self.imageView.image = self.image;
     [self.rateSlider setValue: 5 animated: YES];
     [self.restNameField becomeFirstResponder];
-
+    
+    // API KEY
+    // AIzaSyDHIPecYdIHQGmnWh20ycjCE51KHqMS0Oc
+    
 //    picker.sourceType =
 //    UIImagePickerControllerSourceTypeCamera;
 //    [self presentViewController:picker animated:YES
