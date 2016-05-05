@@ -19,7 +19,7 @@
 - (void) insertRestaurant: (NSString *) name
                     about: (NSString *) about
                    rating: (int) rating
-                    image: (UIImage*) image;
+                    image: (NSData*) image;
 -(Restaurant *) getRestaurantByName: (NSString*) name;
 
 - (void) insertRestaurant: (Restaurant *) restaurant

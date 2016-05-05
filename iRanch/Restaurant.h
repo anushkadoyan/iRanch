@@ -17,11 +17,14 @@
 //rate 1-10
 @property int rating;
 //picture
-@property (assign, nonatomic) UIImage *image;
+@property (readwrite, nonatomic) NSData *image;
 
 
 -(id)initWithName:(NSString *)name
             about:(NSString *)about
             rating:(int)rating
-            image:(UIImage *)image;
+            image:(NSData *)image;
+- (void) encodeWithCoder:(NSCoder *)encoder;
+- (id)initWithCoder:(NSCoder *)decoder ;
+
 @end

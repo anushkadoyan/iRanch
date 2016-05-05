@@ -25,7 +25,7 @@
     // Do any additional setup after loading the view.
     self.aboutField.text = self.restAboutPlaceholder;
     self.restNameField.placeholder = self.name;
-
+    self.imageView.image = self.image;
 //    picker.sourceType =
 //    UIImagePickerControllerSourceTypeCamera;
 //    [self presentViewController:picker animated:YES
@@ -90,6 +90,7 @@ picker {
     [self dismissViewControllerAnimated:YES completion:nil];
     if(self.completionHandler) {
         // ADD RATING
+//        NSData *imageData = UIImagePNGRepresentation(self.imageView.image);
         self.completionHandler(self.restNameField.text,self.aboutField.text,5,self.imageView.image);
     }
 }
@@ -99,6 +100,8 @@ picker {
     [textField resignFirstResponder];
     if(self.completionHandler) {
         // ADD RATING
+//        NSData *imageData = UIImagePNGRepresentation(self.imageView.image);
+
         self.completionHandler(self.restNameField.text,self.aboutField.text,5,self.imageView.image);
         
     }

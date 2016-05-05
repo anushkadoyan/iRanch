@@ -137,6 +137,7 @@
 }
 */
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    Restaurant *r = [[Restaurant alloc] init];
     if ([segue.identifier  isEqual: @"addRanch"]) {
         AddViewController *addVC = segue.destinationViewController;
         //    addVC.restAboutPlaceholder = @"Write something ranchy!";
@@ -146,9 +147,14 @@
         addVC.completionHandler = ^(NSString* name,NSString* restAboutPlaceholder,int rating,UIImage* image ) {
             // && restAboutPlaceholder!=nil && ![restAboutPlaceholder isEqual:@"Write something ranchy!"]
             if(name!=nil) {
-                NSLog(@"Sasfd");
-                [self.model insertRestaurant:name about:restAboutPlaceholder rating:rating image:image];
+
+                NSData *imageData = UIImagePNGRepresentation(image);
+                [self.model insertRestaurant:name about:restAboutPlaceholder rating:rating image:imageData];
+                if(image!=nil) {
+                    NSLog(@"not nil");
+                }
                 [self.tableView reloadData];
+
                 
             }
             
@@ -162,11 +168,27 @@
         NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
         UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:selectedIndexPath];
         ranchVC.name = cell.textLabel.text;
-        ranchVC.about = [self.model getRestaurantByName:cell.textLabel.text].about;
-//      ranchVC.image =[self.model getRestaurantByName:cell.textLabel.text].image;
-        ranchVC.completionHandler = ^(NSString* name,NSString* restAboutPlaceholder,int rating,UIImage* image ) {
+        r = [self.model getRestaurantByName:cell.textLabel.text];
+
+        ranchVC.about = r.about;
         
-        [self dismissViewControllerAnimated:YES completion:nil];
+//        NSData *imageData = UIImagePNGRepresentation(resta.image);
+        
+        
+        
+        
+        
+            UIImage* img = [[UIImage alloc] initWithData:r.image];
+            
+            
+
+        
+        if(r!=nil && r.image!=nil) {
+            ranchVC.image =img;
+        }
+        ranchVC.completionHandler = ^(NSString* name,NSString* restAboutPlaceholder,int rating,NSData* image ){
+        
+            [self dismissViewControllerAnimated:YES completion:nil];
         };
     }
 

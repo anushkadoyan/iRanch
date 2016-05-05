@@ -61,6 +61,11 @@ static NSString *const kRanchPList = @"Ranch.plist";
         if(!_restaurants) {
 //            NSDictionary *rest1 = [[NSDictionary alloc] initWithObjectsAndKeys:@"Hot Wings", nameKey,
 //                                    @"This place has the best ranch!!", aboutKey, nil];
+            
+            
+//            NSData *imageData = UIImagePNGRepresentation(resta.image);
+//            UIImage *image = [UIImage imageWithData:data];
+
             Restaurant *rest1= [[Restaurant alloc] initWithName:@"Hot Wings" about:@"This place has the best ranch!!" rating:10 image:nil];
             Restaurant *rest2= [[Restaurant alloc] initWithName:@"Conrads" about:@"Yummy and nice texture" rating:7 image:nil];
             Restaurant *rest3= [[Restaurant alloc] initWithName:@"Domino's" about:@"Gross. I hate it." rating:4 image:nil];
@@ -89,10 +94,8 @@ static NSString *const kRanchPList = @"Ranch.plist";
 
 -(Restaurant *) getRestaurantByName: (NSString*) name {
     NSString *query = name;
-    BOOL found = NO;
     for (Restaurant *rest in _restaurants) {
         if ([rest.name isEqualToString:query]) {
-            found = YES;
             return rest;
 
             break;
@@ -127,7 +130,7 @@ static NSString *const kRanchPList = @"Ranch.plist";
 - (void) insertRestaurant: (NSString *) name
                   about: (NSString *) about
                   rating: (int) rating
-                    image: (UIImage*) image {
+                    image: (NSData*) image {
     
     Restaurant *rest= [[Restaurant alloc] initWithName:name about:about rating:rating image:image];
     [self insertRestaurant: rest];

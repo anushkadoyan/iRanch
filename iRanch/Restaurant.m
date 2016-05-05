@@ -20,7 +20,7 @@
 -(id)initWithName:(NSString *)name
             about:(NSString *)about
            rating:(int)rating
-            image:(UIImage *)image
+            image:(NSData *)image
 
 {
     self = [super init];
@@ -41,7 +41,7 @@
     [encoder encodeObject:self.name forKey:@"name"];
     [encoder encodeObject:self.about forKey:@"about"];
     [encoder encodeInteger:self.rating forKey:@"rating"];
-//    [encoder encodeObject:self.image forKey:@"image"];
+    [encoder encodeObject:self.image forKey:@"image"];
 
 
 }
@@ -52,7 +52,7 @@
         self.about = [decoder decodeObjectForKey:@"about" ];
         self.rating = [decoder decodeIntForKey:@"rating"];
 
-//        self.image = [decoder decodeObjectForKey:@"image"];
+        self.image = [decoder decodeObjectForKey:@"image"];
 
 
 

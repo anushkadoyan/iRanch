@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-typedef void (^ranchCompletionHandler) (NSString* name,NSString* about,int rating, UIImage *image);
+typedef void (^ranchCompletionHandler) (NSString* name,NSString* about,int rating, NSData *image);
 
 
 @interface RanchViewController : UIViewController

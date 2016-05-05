@@ -180,7 +180,7 @@
                                     <action selector="addImageClicked:" destination="Zki-0I-V2K" eventType="touchUpInside" id="k5w-OT-NG8"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qzB-yv-Wso">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qzB-yv-Wso">
                                 <rect key="frame" x="20" y="222" width="560" height="157"/>
                             </imageView>
                         </subviews>
@@ -393,6 +393,7 @@
                             </textView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GmI-aM-1ag">
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <color key="tintColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <items>
                                     <navigationItem title="Title" id="myW-jW-K2X">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="I5K-qi-K4B"/>
