@@ -7,16 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
-typedef void (^addCompletionHandler) (NSString* name,NSString* restAboutPlaceholder,int rating, UIImage* image);
+#import <CoreLocation/CoreLocation.h>
 
-@interface AddViewController : UIViewController
+typedef void (^addCompletionHandler) (NSString* name,NSString* restAboutPlaceholder,int rating, UIImage* image, NSDictionary* location, NSString *address);
+
+@interface AddViewController : UIViewController<CLLocationManagerDelegate>
 @property (strong, nonatomic) NSString *name;
 
 @property (strong, nonatomic) NSString *about;
 //rate 1-5
 @property int rating;
 @property (strong, nonatomic) UIImage *image;
+@property (strong, nonatomic) NSDictionary *locationDict;
 @property (strong, nonatomic) NSString  *restAboutPlaceholder;
 @property (copy,nonatomic) addCompletionHandler completionHandler;
+@property (strong, nonatomic)  NSString *address;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Restaurant.h"
 //static NSString * const nameKey = @"name";
 //static NSString * const aboutKey = @"about";
 @interface RanchModel : NSObject
@@ -19,7 +20,9 @@
 - (void) insertRestaurant: (NSString *) name
                     about: (NSString *) about
                    rating: (int) rating
-                    image: (NSData*) image;
+                    image: (NSData*) image
+                    location: (NSDictionary*) location;
+
 -(Restaurant *) getRestaurantByName: (NSString*) name;
 
 - (void) insertRestaurant: (Restaurant *) restaurant

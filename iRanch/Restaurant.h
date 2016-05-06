@@ -18,12 +18,15 @@
 @property int rating;
 //picture
 @property (readwrite, nonatomic) NSData *image;
+@property (readwrite, nonatomic) NSDictionary *location;
 
 
 -(id)initWithName:(NSString *)name
             about:(NSString *)about
             rating:(int)rating
-            image:(NSData *)image;
+            image:(NSData *)image
+            location:(NSDictionary *)location;
+
 - (void) encodeWithCoder:(NSCoder *)encoder;
 - (id)initWithCoder:(NSCoder *)decoder ;
 

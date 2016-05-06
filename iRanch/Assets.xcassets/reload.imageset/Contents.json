@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "iranchpic.png",
+      "filename" : "reload.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "iranchpic@2x.png",
+      "filename" : "reload@2x.png",
       "scale" : "2x"
     },
     {

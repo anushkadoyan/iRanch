@@ -9,7 +9,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MapViewController : UIViewController<CLLocationManagerDelegate>
+@interface MapViewController : UIViewController
 
 
 @end

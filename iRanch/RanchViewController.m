@@ -9,11 +9,13 @@
 #import "RanchViewController.h"
 
 @interface RanchViewController ()<UITextFieldDelegate, UITextViewDelegate>
+
 @property (weak, nonatomic) IBOutlet UILabel *restName;
 @property (weak, nonatomic) IBOutlet UITextView *restAbout;
 @property (weak, nonatomic) IBOutlet UIImageView *ranchImage;
 @property (weak, nonatomic) IBOutlet UILabel *ratingLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *rateImage;
+@property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 
 @end
 
@@ -24,6 +26,18 @@
     self.restName.text = self.name;
     self.restAbout.text = self.about;
     self.ranchImage.image = self.image;
+//    self.locationLabel.text = @"No location specified";
+
+    if(self.location!=nil) {
+        self.locationLabel.text= [NSString stringWithFormat:@"Latitude: %@°, Longitude: %@°",self.location[@"latitude"],self.location[@"longitude"]];
+    }
+    else {
+        self.locationLabel.text = @"No location specified";
+    }
+
+//    self.locationLabel.text=self.address;
+    NSLog(@"in rvc: %@",self.address);
+    
     if(self.rating>=5) {
      self.rateImage.image =  [UIImage imageNamed: @"thumbs up.png"];
     }

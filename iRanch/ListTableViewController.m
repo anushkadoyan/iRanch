@@ -14,6 +14,8 @@
 #import "RanchModel.h"
 @interface TableViewController ()
 @property (strong, nonatomic) RanchModel *model;
+@property (strong, nonatomic) NSString *address;
+
 @end
 
 @implementation TableViewController
@@ -138,18 +140,22 @@
 */
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     Restaurant *r = [[Restaurant alloc] init];
+    
+    //if add button is clicked
     if ([segue.identifier  isEqual: @"addRanch"]) {
         AddViewController *addVC = segue.destinationViewController;
         //    addVC.restAboutPlaceholder = @"Write something ranchy!";
         addVC.name = @"Hot Wings";
         addVC.rating = 5;
         
-        addVC.completionHandler = ^(NSString* name,NSString* restAboutPlaceholder,int rating,UIImage* image ) {
+        addVC.completionHandler = ^(NSString* name,NSString* restAboutPlaceholder,int rating,UIImage* image, NSDictionary* location, NSString *address ) {
             // && restAboutPlaceholder!=nil && ![restAboutPlaceholder isEqual:@"Write something ranchy!"]
             if(name!=nil) {
+                self.address = address;
+                NSLog(@"in ltvc: %@",self.address);
 
                 NSData *imageData = UIImagePNGRepresentation(image);
-                [self.model insertRestaurant:name about:restAboutPlaceholder rating:rating image:imageData];
+                [self.model insertRestaurant:name about:restAboutPlaceholder rating:rating image:imageData location:location];
                 
                 [self.tableView reloadData];
 
@@ -160,6 +166,9 @@
         };
 
     }
+    
+    
+    // If restaurant item is clicked
     else if ([segue.identifier  isEqual: @"showRanch"]) {
 
         RanchViewController *ranchVC = segue.destinationViewController;
@@ -176,7 +185,6 @@
             ranchVC.image =img;
         }
         if(r.image==nil) {
-            NSLog(@"is nil");
             UIImage* defaultImage = [UIImage imageNamed: @"defaultranch"];
 
 //            NSData *defaultData = UIImagePNGRepresentation(defaultImage);
@@ -185,7 +193,9 @@
             ranchVC.image =  defaultImage;
 ;
         }
-        ranchVC.completionHandler = ^(NSString* name,NSString* restAboutPlaceholder,int rating,NSData* image ){
+        ranchVC.address = self.address;
+        ranchVC.location = r.location;
+        ranchVC.completionHandler = ^(NSString* name,NSString* restAboutPlaceholder,int rating,NSData* image, NSDictionary *location, NSString *address){
         
             [self dismissViewControllerAnimated:YES completion:nil];
         };

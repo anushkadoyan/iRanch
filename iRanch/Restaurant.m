@@ -21,6 +21,7 @@
             about:(NSString *)about
            rating:(int)rating
             image:(NSData *)image
+         location:(NSDictionary*) location
 
 {
     self = [super init];
@@ -29,6 +30,7 @@
         self.about = about;
         self.rating = rating;
         self.image = image;
+        self.location = location;
 
     }
     return self;
@@ -42,6 +44,7 @@
     [encoder encodeObject:self.about forKey:@"about"];
     [encoder encodeInteger:self.rating forKey:@"rating"];
     [encoder encodeObject:self.image forKey:@"image"];
+    [encoder encodeObject:self.location forKey:@"location"];
 
 
 }
@@ -51,8 +54,8 @@
         self.name = [decoder decodeObjectForKey:@"name"];
         self.about = [decoder decodeObjectForKey:@"about" ];
         self.rating = [decoder decodeIntForKey:@"rating"];
-
         self.image = [decoder decodeObjectForKey:@"image"];
+        self.location = [decoder decodeObjectForKey:@"location"];
 
 
 

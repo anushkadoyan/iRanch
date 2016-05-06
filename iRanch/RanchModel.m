@@ -66,11 +66,21 @@ static NSString *const kRanchPList = @"Ranch.plist";
 //            NSData *imageData = UIImagePNGRepresentation(resta.image);
 //            UIImage *image = [UIImage imageWithData:data];
 
-            Restaurant *rest1= [[Restaurant alloc] initWithName:@"Hot Wings" about:@"This place has the best ranch!!" rating:10 image:nil];
-            Restaurant *rest2= [[Restaurant alloc] initWithName:@"Conrads" about:@"Yummy and nice texture" rating:7 image:nil];
-            Restaurant *rest3= [[Restaurant alloc] initWithName:@"Domino's" about:@"Gross. I hate it." rating:4 image:nil];
-            Restaurant *rest4= [[Restaurant alloc] initWithName:@"Buffalo Wild Wings" about:@"It's okay" rating:5 image:nil];
-            Restaurant *rest5= [[Restaurant alloc] initWithName:@"LA Cafe" about:@"Almost perfect" rating:9 image:nil];
+            NSDictionary *locationDict= [[NSDictionary alloc] initWithObjectsAndKeys:@"23", @"latitude",
+                                @"42", @"longitude", nil];
+             NSDictionary *locationDic2= [[NSDictionary alloc] initWithObjectsAndKeys:@"12.42", @"latitude",
+                                @"123.1", @"longitude", nil];
+             NSDictionary *locationDic3= [[NSDictionary alloc] initWithObjectsAndKeys:@"36.7783", @"latitude",
+                                @"119.4179", @"longitude", nil];
+             NSDictionary *locationDict4= [[NSDictionary alloc] initWithObjectsAndKeys:@"40", @"latitude",
+                                @"45", @"longitude", nil];
+             NSDictionary *locationDict5= [[NSDictionary alloc] initWithObjectsAndKeys:@"31", @"latitude",
+                                @"-30", @"longitude", nil];
+            Restaurant *rest1= [[Restaurant alloc] initWithName:@"Hot Wings" about:@"This place has the best ranch!!" rating:10 image:nil location:locationDict];
+            Restaurant *rest2= [[Restaurant alloc] initWithName:@"Conrads" about:@"Yummy and nice texture" rating:7 image:nil location:locationDic2];
+            Restaurant *rest3= [[Restaurant alloc] initWithName:@"Domino's" about:@"Gross. I hate it." rating:4 image:nil location:locationDic3];
+            Restaurant *rest4= [[Restaurant alloc] initWithName:@"Buffalo Wild Wings" about:@"It's okay" rating:5 image:nil location:locationDict4];
+            Restaurant *rest5= [[Restaurant alloc] initWithName:@"LA Cafe" about:@"Almost perfect" rating:9 image:nil location:locationDict5];
             
 
 //            MyClass oClass = [[MyClass alloc] initWithName:@"Hot Wings" andAbout:@"This place has the best ranch!!"];
@@ -128,11 +138,12 @@ static NSString *const kRanchPList = @"Ranch.plist";
 
 
 - (void) insertRestaurant: (NSString *) name
-                  about: (NSString *) about
-                  rating: (int) rating
-                    image: (NSData*) image {
-    
-    Restaurant *rest= [[Restaurant alloc] initWithName:name about:about rating:rating image:image];
+                    about: (NSString *) about
+                    rating: (int) rating
+                    image: (NSData*) image
+                    location: (NSDictionary*) location {
+
+    Restaurant *rest= [[Restaurant alloc] initWithName:name about:about rating:rating image:image location:location];
     [self insertRestaurant: rest];
 
     [self save];
