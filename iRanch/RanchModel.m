@@ -31,17 +31,7 @@ static NSString *const kRanchPList = @"Ranch.plist";
     return _sharedModel;
 }
 -(void) save {
-//    NSLog(@"Saved");
-//    NSData *data = UIImagePNGRepresentation(imageview.image);
-//    [imageArray addObject:data];
-//    [imageArray writeToFile:plistPath atomically:YES];
-//    
-//    
-//    for (Restaurant *resta in _restaurants) {
-//        NSData *data = UIImagePNGRepresentation(resta.image);
-//        resta.image = data;
-//        
-//    }
+//save to plist file
     _data = [NSKeyedArchiver archivedDataWithRootObject:_restaurants];
     [self.data writeToFile:self.filepath atomically:YES];
 }
@@ -66,6 +56,8 @@ static NSString *const kRanchPList = @"Ranch.plist";
 //            NSData *imageData = UIImagePNGRepresentation(resta.image);
 //            UIImage *image = [UIImage imageWithData:data];
 
+            
+            //Dummy locations
             NSDictionary *locationDict= [[NSDictionary alloc] initWithObjectsAndKeys:@"23", @"latitude",
                                 @"42", @"longitude", nil];
              NSDictionary *locationDic2= [[NSDictionary alloc] initWithObjectsAndKeys:@"12.42", @"latitude",
@@ -76,6 +68,9 @@ static NSString *const kRanchPList = @"Ranch.plist";
                                 @"45", @"longitude", nil];
              NSDictionary *locationDict5= [[NSDictionary alloc] initWithObjectsAndKeys:@"31", @"latitude",
                                 @"-30", @"longitude", nil];
+            
+            
+            //Dummy restaurants and reviews
             Restaurant *rest1= [[Restaurant alloc] initWithName:@"Hot Wings" about:@"This place has the best ranch!!" rating:10 image:nil location:locationDict];
             Restaurant *rest2= [[Restaurant alloc] initWithName:@"Conrads" about:@"Yummy and nice texture" rating:7 image:nil location:locationDic2];
             Restaurant *rest3= [[Restaurant alloc] initWithName:@"Domino's" about:@"Gross. I hate it." rating:4 image:nil location:locationDic3];

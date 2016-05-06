@@ -35,6 +35,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+//edit button clicked
 - (IBAction)editClicked:(id)sender {
     if(self.tableView.editing == YES) {
         [self.tableView setEditing:NO animated:YES];

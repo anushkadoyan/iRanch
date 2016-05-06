@@ -24,6 +24,12 @@
 
 @end
 
+//========================================================
+//
+//
+// CORE LOCATION AND IMAGE PICKER API USED HERE
+//
+//========================================================
 @implementation AddViewController {
     
 }
@@ -38,14 +44,12 @@
     [self.rateSlider setValue: 5 animated: YES];
     [self.restNameField becomeFirstResponder];
     
+    //When clicking away dismiss keyboard
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
                                    initWithTarget:self
                                    action:@selector( dismissKeyboard)];
     [self.view addGestureRecognizer:tap];
 
-    // API KEY
-    // AIzaSyDHIPecYdIHQGmnWh20ycjCE51KHqMS0Oc
-    
 
     
 
@@ -71,7 +75,7 @@
     [self.locationManager stopUpdatingLocation];
 
     
-//    
+//    didn't work :(
 //    // Reverse Geocoding
 //    NSLog(@"Resolving the Address");
 //    [self.geocoder reverseGeocodeLocation:newLocation completionHandler:^(NSArray *placemarks, NSError *error) {
@@ -112,7 +116,7 @@
 }
 
 
-
+// touch away
 -(void)dismissKeyboard {
     [self.restNameField resignFirstResponder];
     [self.aboutField resignFirstResponder];
@@ -155,7 +159,7 @@
 
 }
 
-
+// IMAGE PICKER
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     UIImage *selectedImage = info[UIImagePickerControllerEditedImage];
     self.imageView.image = selectedImage;

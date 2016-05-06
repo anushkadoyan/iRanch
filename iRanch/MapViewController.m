@@ -17,6 +17,16 @@
 
 @end
 
+//========================================================
+//
+//
+// GOOGLE MAPS API USED HERE
+//
+//========================================================
+
+// API KEY
+// AIzaSyDHIPecYdIHQGmnWh20ycjCE51KHqMS0Oc
+
 
 @implementation MapViewController{
     GMSMapView *mapView_;
