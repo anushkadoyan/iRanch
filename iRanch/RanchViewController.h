@@ -7,12 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
 
 typedef void (^ranchCompletionHandler) (NSString* name,NSString* about,int rating, NSData *image);
 
 
-@interface RanchViewController : UIViewController
+@interface RanchViewController : UIViewController<CLLocationManagerDelegate>
+
 
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *about;

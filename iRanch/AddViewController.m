@@ -31,6 +31,11 @@
     [self.rateSlider setValue: 5 animated: YES];
     [self.restNameField becomeFirstResponder];
     
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector( dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
+
     // API KEY
     // AIzaSyDHIPecYdIHQGmnWh20ycjCE51KHqMS0Oc
     
@@ -44,6 +49,11 @@
 //    imagePickerController.delegate = self;
 //    imagePickerController.sourceType =  UIImagePickerControllerSourceTypePhotoLibrary;
 //    [self presentViewController:imagePickerController animated:YES completion:nil];
+
+}
+-(void)dismissKeyboard {
+    [self.restNameField resignFirstResponder];
+    [self.aboutField resignFirstResponder];
 
 }
 - (IBAction)sliderChanged:(id)sender {

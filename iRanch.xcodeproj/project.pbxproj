@@ -21,6 +21,8 @@
 		84C41D501CD602CD00CC05EA /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C41D4F1CD602CD00CC05EA /* AddViewController.m */; };
 		84C41D531CD8699400CC05EA /* RanchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C41D521CD8699400CC05EA /* RanchViewController.m */; };
 		84C41D561CDB1A0100CC05EA /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C41D551CDB1A0100CC05EA /* MapViewController.m */; };
+		84C41D581CDB4B2E00CC05EA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C41D571CDB4B2E00CC05EA /* CoreLocation.framework */; };
+		84C41D5A1CDB74B500CC05EA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C41D591CDB74B500CC05EA /* MapKit.framework */; };
 		A9A994BDCD9FFE544172E21D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E8E77CCD79E09AFD0C269AF /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +72,8 @@
 		84C41D521CD8699400CC05EA /* RanchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RanchViewController.m; sourceTree = "<group>"; };
 		84C41D541CDB1A0100CC05EA /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		84C41D551CDB1A0100CC05EA /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		84C41D571CDB4B2E00CC05EA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		84C41D591CDB74B500CC05EA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		9E8E77CCD79E09AFD0C269AF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9203035CACB9FAA29A3E971 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		F7E2612DB0A8C569139D1955 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -80,6 +84,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84C41D581CDB4B2E00CC05EA /* CoreLocation.framework in Frameworks */,
+				84C41D5A1CDB74B500CC05EA /* MapKit.framework in Frameworks */,
 				A9A994BDCD9FFE544172E21D /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -229,6 +235,8 @@
 		D1BE6C776F4125CC9F1E50CA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				84C41D591CDB74B500CC05EA /* MapKit.framework */,
+				84C41D571CDB4B2E00CC05EA /* CoreLocation.framework */,
 				9E8E77CCD79E09AFD0C269AF /* libPods.a */,
 			);
 			name = Frameworks;
@@ -305,6 +313,14 @@
 					84455E931CD1A4E500A857F2 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 945UVH27H4;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					84455EAC1CD1A4E600A857F2 = {
 						CreatedOnToolsVersion = 7.3;
