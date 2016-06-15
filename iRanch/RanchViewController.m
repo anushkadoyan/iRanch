@@ -29,7 +29,7 @@
 //    self.locationLabel.text = @"No location specified";
 
     if(self.location!=nil) {
-        self.locationLabel.text= [NSString stringWithFormat:@"Latitude: %@°, Longitude: %@°",self.location[@"latitude"],self.location[@"longitude"]];
+        self.locationLabel.text= [NSString stringWithFormat:@"Latitude: %@, Longitude: %@",self.location[@"latitude"],self.location[@"longitude"]];
     }
     else {
         self.locationLabel.text = @"No location specified";

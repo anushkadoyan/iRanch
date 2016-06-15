@@ -21,6 +21,7 @@
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic)  CLGeocoder *geocoder;
 @property (strong, nonatomic)  CLPlacemark *placemark;
+@property (weak, nonatomic) IBOutlet UILabel *rateLabelDesc;
 
 @end
 
@@ -41,6 +42,8 @@
     self.aboutField.delegate = self;
     self.restNameField.placeholder = self.name;
     self.imageView.image = self.image;
+    self.rateLabelDesc.text = @"Meh";
+
     [self.rateSlider setValue: 5 animated: YES];
     [self.restNameField becomeFirstResponder];
     
@@ -131,7 +134,36 @@
     NSString *newText = [[NSString alloc] initWithFormat:@"%d",numberAsInt];
     self.rateLabel.text = [NSString stringWithFormat:@"%@%@",newText,@"/10"];
     self.rating = [self.rateLabel.text intValue];
+    if ([self.rateLabel.text intValue]==0) {
+        self.rateLabelDesc.text = @"Ew";
 
+    }
+    else if ([self.rateLabel.text intValue]>0 && [self.rateLabel.text intValue]<=3) {
+        self.rateLabelDesc.text = @"Yuck";
+
+    }
+    else if ([self.rateLabel.text intValue]>3 && [self.rateLabel.text intValue]<=6) {
+        self.rateLabelDesc.text = @"Meh";
+
+    }
+    else if ([self.rateLabel.text intValue]>6 && [self.rateLabel.text intValue]<=9) {
+        self.rateLabelDesc.text = @"Yum";
+
+    }
+    else if ([self.rateLabel.text intValue]==10) {
+        self.rateLabelDesc.text = @"Wow!";
+
+    }
+    if([self.rateLabel.text intValue]<5) {
+        [self.rateSlider setMinimumTrackTintColor:[UIColor redColor]];
+
+    }
+    else {
+        [self.rateSlider setMinimumTrackTintColor:[UIColor greenColor]];
+
+    }
+
+    
 }
 
 
