@@ -162,7 +162,7 @@
 
     }
     else {
-        [self.rateSlider setMinimumTrackTintColor:[UIColor greenColor]];
+        [self.rateSlider setMinimumTrackTintColor:[UIColor colorWithRed:0.2 green:0.6 blue:0.2 alpha:1.0] ];
 
     }
 
