@@ -28,7 +28,13 @@
         <scene sceneID="JR6-Mf-eeC">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Fyd-ue-rCn" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="List" image="List" id="IaR-vQ-rwz"/>
+                    <tabBarItem key="tabBarItem" title="List" image="List" id="IaR-vQ-rwz">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.20000000000000001" green="0.60392156862745094" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="R19-XO-Nbr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -84,6 +90,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="editButton" destination="Jpt-Ym-lp1" id="TG1-pq-Z4k"/>
                         <outlet property="navBar" destination="kah-Wu-cuw" id="dRr-yO-4mm"/>
                     </connections>
                 </tableViewController>
@@ -316,7 +323,13 @@
         <scene sceneID="hly-HM-MnK">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Uk9-He-aYf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Map" image="MapMarker" id="66T-Cx-zfD"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="MapMarker" id="66T-Cx-zfD">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.20000000000000001" green="0.60392156862745094" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="4n0-kz-eF4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

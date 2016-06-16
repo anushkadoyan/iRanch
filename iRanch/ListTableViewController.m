@@ -16,6 +16,7 @@
 @property (strong, nonatomic) RanchModel *model;
 @property (strong, nonatomic) NSString *address;
 @property (weak, nonatomic) IBOutlet UINavigationItem *navBar;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *editButton;
 
 @end
 
@@ -33,6 +34,7 @@
     [self.navigationController.navigationBar setBarTintColor:bg];
     [self.navigationController.navigationBar setTranslucent:YES];
     [self.navigationController.navigationBar setBarStyle:UIBarStyleBlack];
+    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"iRanch_logo_small.png"]];
 
 }
 
@@ -45,6 +47,7 @@
 - (IBAction)editClicked:(id)sender {
     if(self.tableView.editing == YES) {
         [self.tableView setEditing:NO animated:YES];
+        
     }
     else {
         [self.tableView setEditing:YES animated:YES];
