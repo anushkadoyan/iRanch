@@ -22,6 +22,7 @@
 @property (strong, nonatomic)  CLGeocoder *geocoder;
 @property (strong, nonatomic)  CLPlacemark *placemark;
 @property (weak, nonatomic) IBOutlet UILabel *rateLabelDesc;
+@property (weak, nonatomic) IBOutlet UINavigationBar *navBar;
 
 @end
 
@@ -52,7 +53,9 @@
                                    initWithTarget:self
                                    action:@selector( dismissKeyboard)];
     [self.view addGestureRecognizer:tap];
-
+    [self.navBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    self.navBar.shadowImage = [UIImage new];
+    self.navBar.translucent = YES;
 
     
 

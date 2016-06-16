@@ -83,6 +83,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="navBar" destination="kah-Wu-cuw" id="dRr-yO-4mm"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UIz-r6-jC4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -100,18 +103,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hfh-nJ-zbk">
+                            <label opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LiC-ob-dlG">
+                                <rect key="frame" x="0.0" y="-1" width="600" height="65"/>
+                                <color key="backgroundColor" red="0.20000000000000001" green="0.60392156860000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <navigationBar opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hfh-nJ-zbk">
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <color key="backgroundColor" red="0.20000000000000001" green="0.60392156860000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </textAttributes>
                                 <items>
                                     <navigationItem title="Add a Restaurant" id="uIM-ps-4Id">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="mV6-LB-eQ4">
-                                            <color key="tintColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
                                                 <action selector="cancelClicked:" destination="Zki-0I-V2K" id="YwW-ZA-00U"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="save" id="bZH-vV-C2W">
-                                            <color key="tintColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
                                                 <action selector="saveClicked:" destination="Zki-0I-V2K" id="aXG-bM-SiZ"/>
                                             </connections>
@@ -158,12 +172,13 @@
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="neG-GI-yjh">
                                 <rect key="frame" x="20" y="181" width="560" height="33"/>
-                                <color key="backgroundColor" red="0.96861535310745239" green="0.97380810976028442" blue="0.90293890237808228" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.20000000000000001" green="0.60392156860000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="33" id="8vV-20-Abo"/>
                                 </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Tap to pick an image">
-                                    <color key="titleColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -175,8 +190,10 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r24-7c-NzI">
                                 <rect key="frame" x="20" y="452" width="560" height="34"/>
-                                <color key="backgroundColor" red="0.96861535310745239" green="0.97380810976028442" blue="0.90293890237808228" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Tap to get location"/>
+                                <color key="backgroundColor" red="0.20000000000000001" green="0.60392156860000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Tap to get location">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="getLocationClicked:" destination="Zki-0I-V2K" eventType="touchUpInside" id="Kgc-gE-Hur"/>
                                 </connections>
@@ -254,6 +271,7 @@
                         <outlet property="cancelButton" destination="mV6-LB-eQ4" id="caa-Pl-6Z8"/>
                         <outlet property="imageView" destination="qzB-yv-Wso" id="xZm-dm-j8R"/>
                         <outlet property="locationButton" destination="r24-7c-NzI" id="meT-Nf-cJL"/>
+                        <outlet property="navBar" destination="hfh-nJ-zbk" id="ROQ-fj-5Jh"/>
                         <outlet property="rateLabel" destination="d0Z-6e-kcN" id="A6Y-Ae-S0i"/>
                         <outlet property="rateLabelDesc" destination="XX7-NH-uS4" id="brs-1x-Nnx"/>
                         <outlet property="rateSlider" destination="CHH-ZF-Hdo" id="OCl-EN-V8K"/>

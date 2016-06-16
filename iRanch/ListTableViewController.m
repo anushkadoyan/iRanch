@@ -15,6 +15,7 @@
 @interface TableViewController ()
 @property (strong, nonatomic) RanchModel *model;
 @property (strong, nonatomic) NSString *address;
+@property (weak, nonatomic) IBOutlet UINavigationItem *navBar;
 
 @end
 
@@ -28,6 +29,7 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
 }
 
 - (void)didReceiveMemoryWarning {
