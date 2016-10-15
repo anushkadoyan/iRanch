@@ -48,9 +48,8 @@
 //     Creates a marker in the center of the map.
     
     //zoom on california
-    //why is it on china??
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:36.7783
-                                                            longitude:119.4179
+                                                            longitude:-119.4179
                                                                  zoom:5];
     mapView_ = [GMSMapView mapWithFrame:CGRectZero camera:camera];
     mapView_.myLocationEnabled = YES;
@@ -85,7 +84,7 @@
     
     //refresh content
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:36.7783
-                                                            longitude:119.4179
+                                                            longitude:-119.4179
                                                                  zoom:5];
     mapView_ = [GMSMapView mapWithFrame:CGRectZero camera:camera];
     mapView_.myLocationEnabled = YES;
