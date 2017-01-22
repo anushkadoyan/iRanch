@@ -165,7 +165,7 @@
                 NSLog(@"in ltvc: %@",self.address);
 
                 NSData *imageData = UIImagePNGRepresentation(image);
-                [self.model insertRestaurant:name about:restAboutPlaceholder rating:rating image:imageData location:location];
+                [self.model insertRestaurant:name about:restAboutPlaceholder rating:rating image:imageData location:location address: address];
                 
                 [self.tableView reloadData];
 
@@ -186,7 +186,7 @@
         UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:selectedIndexPath];
         ranchVC.name = cell.textLabel.text;
         r = [self.model getRestaurantByName:cell.textLabel.text];
-
+        NSLog(@"%@",r.address);
         ranchVC.about = r.about;
         
         UIImage* img = [[UIImage alloc] initWithData:r.image];
@@ -203,7 +203,7 @@
             ranchVC.image =  defaultImage;
 ;
         }
-        ranchVC.address = self.address;
+        ranchVC.address = r.address;
         ranchVC.location = r.location;
         ranchVC.completionHandler = ^(NSString* name,NSString* restAboutPlaceholder,int rating,NSData* image, NSDictionary *location, NSString *address){
         

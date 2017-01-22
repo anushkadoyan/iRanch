@@ -21,7 +21,8 @@
                     about: (NSString *) about
                    rating: (int) rating
                     image: (NSData*) image
-                    location: (NSDictionary*) location;
+                 location: (NSDictionary*) location
+                  address: (NSString *) address;
 
 -(Restaurant *) getRestaurantByName: (NSString*) name;
 

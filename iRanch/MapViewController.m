@@ -40,21 +40,23 @@
 
     self.model = [RanchModel sharedModel];
 
-    
-    
-//     Create a GMSCameraPosition that tells the map to display the
-//     coordinate -33.86,151.20 at zoom level 6.
-//    
-//     Creates a marker in the center of the map.
+    [self loadMap];
+}
+- (void) loadMap {
+    NSLog(@"called reload");
+    //     Create a GMSCameraPosition that tells the map to display the
+    //     coordinate -33.86,151.20 at zoom level 6.
+    //
+    //     Creates a marker in the center of the map.
     
     //zoom on california
-    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:36.7783
-                                                            longitude:-119.4179
-                                                                 zoom:5];
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:34.0196
+                                                            longitude:-118.29
+                                                                 zoom:13];
     mapView_ = [GMSMapView mapWithFrame:CGRectZero camera:camera];
     mapView_.myLocationEnabled = YES;
     self.view = mapView_;
-//  Go through restaurants and extract locations from each to display on map
+    //  Go through restaurants and extract locations from each to display on map
     for (int i = 0; i < [self.model numberOfRestaurants]; i++)
     {
         Restaurant *rest = [self.model restaurantAtIndex:i];
@@ -62,57 +64,29 @@
             NSLog(@"not nil");
             NSString *latitude=rest.location[@"latitude"];
             NSString *longitude=rest.location[@"longitude"];
-            NSUInteger lat = [latitude integerValue];
-            NSUInteger lon = [longitude integerValue];
+            CLLocationDegrees lat = [latitude doubleValue];
+            CLLocationDegrees lon = [longitude doubleValue];
+            NSLog(@"lat:%g, long:%g",lat,lon);
             
             // Creates a marker in the center of the map.
             GMSMarker *marker = [[GMSMarker alloc] init];
             marker.position = CLLocationCoordinate2DMake(lat, lon);
             marker.title = rest.name;
-//            marker.icon = img;
-
+            //            marker.icon = img;
+            mapView_.settings.myLocationButton = true;
+            
             marker.snippet = [NSString stringWithFormat:@"Rating: %d",rest.rating];
             marker.map = mapView_;
         }
-
-        }
-
+        
     }
+    
 
+}
 //reload button clicked
 - (IBAction)reloadClicked:(id)sender {
-    
-    //refresh content
-    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:36.7783
-                                                            longitude:-119.4179
-                                                                 zoom:5];
-    mapView_ = [GMSMapView mapWithFrame:CGRectZero camera:camera];
-    mapView_.myLocationEnabled = YES;
-    self.view = mapView_;
-    for (int i = 0; i < [self.model numberOfRestaurants]; i++)
-    {
-        Restaurant *rest = [self.model restaurantAtIndex:i];
-        if(rest.location!=nil) {
-            NSLog(@"not nil");
-            NSString *latitude=rest.location[@"latitude"];
-            NSString *longitude=rest.location[@"longitude"];
-            NSUInteger lat = [latitude integerValue];
-            NSUInteger lon = [longitude integerValue];
-
-            
-            
-            // Creates a marker in the center of the map.
-            GMSMarker *marker = [[GMSMarker alloc] init];
-            marker.position = CLLocationCoordinate2DMake(lat, lon);
-            marker.title = rest.name;
-            
-            marker.snippet = [NSString stringWithFormat:@"Rating: %d",rest.rating];
-            marker.map = mapView_;
-        }
-
-    }
-    
-
+    [self loadMap];
+   
 }
 
 

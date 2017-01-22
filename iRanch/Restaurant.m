@@ -22,7 +22,7 @@
            rating:(int)rating
             image:(NSData *)image
          location:(NSDictionary*) location
-
+            address:(NSString *)address
 {
     self = [super init];
     if (self) {
@@ -31,6 +31,7 @@
         self.rating = rating;
         self.image = image;
         self.location = location;
+        self.address = address;
 
     }
     return self;
@@ -45,6 +46,7 @@
     [encoder encodeInteger:self.rating forKey:@"rating"];
     [encoder encodeObject:self.image forKey:@"image"];
     [encoder encodeObject:self.location forKey:@"location"];
+    [encoder encodeObject:self.address forKey:@"address"];
 
 
 }
@@ -56,6 +58,7 @@
         self.rating = [decoder decodeIntForKey:@"rating"];
         self.image = [decoder decodeObjectForKey:@"image"];
         self.location = [decoder decodeObjectForKey:@"location"];
+        self.address = [decoder decodeObjectForKey:@"address"];
 
 
 

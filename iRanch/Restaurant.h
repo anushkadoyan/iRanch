@@ -14,6 +14,8 @@
 
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *about;
+@property (strong, nonatomic) NSString *address;
+
 //rate 1-10
 @property int rating;
 //picture
@@ -25,8 +27,8 @@
             about:(NSString *)about
             rating:(int)rating
             image:(NSData *)image
-            location:(NSDictionary *)location;
-
+            location:(NSDictionary *)location
+            address: (NSString *) address;
 - (void) encodeWithCoder:(NSCoder *)encoder;
 - (id)initWithCoder:(NSCoder *)decoder ;
 

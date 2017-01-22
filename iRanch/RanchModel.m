@@ -46,8 +46,8 @@ static NSString *const kRanchPList = @"Ranch.plist";
         _data = [NSData dataWithContentsOfFile:_filepath];
         _restaurants = [NSKeyedUnarchiver unarchiveObjectWithData:_data];
         // initialize our properties
-        NSLog(@"Documents Directory: %@", [[[NSFileManager defaultManager]
-                                            URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject]);
+//        NSLog(@"Documents Directory: %@", [[[NSFileManager defaultManager]
+//                                            URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject]);
         if(!_restaurants) {
 //            NSDictionary *rest1 = [[NSDictionary alloc] initWithObjectsAndKeys:@"Hot Wings", nameKey,
 //                                    @"This place has the best ranch!!", aboutKey, nil];
@@ -71,11 +71,11 @@ static NSString *const kRanchPList = @"Ranch.plist";
             
             
             //Dummy restaurants and reviews
-            Restaurant *rest1= [[Restaurant alloc] initWithName:@"Hot Wings" about:@"This place has the best ranch!!" rating:10 image:nil location:locationDict];
-            Restaurant *rest2= [[Restaurant alloc] initWithName:@"Conrads" about:@"Yummy and nice texture" rating:7 image:nil location:locationDic2];
-            Restaurant *rest3= [[Restaurant alloc] initWithName:@"Domino's" about:@"Gross. I hate it." rating:4 image:nil location:locationDic3];
-            Restaurant *rest4= [[Restaurant alloc] initWithName:@"Buffalo Wild Wings" about:@"It's okay" rating:5 image:nil location:locationDict4];
-            Restaurant *rest5= [[Restaurant alloc] initWithName:@"LA Cafe" about:@"Almost perfect" rating:9 image:nil location:locationDict5];
+            Restaurant *rest1= [[Restaurant alloc] initWithName:@"Hot Wings" about:@"This place has the best ranch!!" rating:10 image:nil location:locationDict address: @"314 N Brand Blvd, Glendale, CA 91203"];
+            Restaurant *rest2= [[Restaurant alloc] initWithName:@"Conrads" about:@"Yummy and nice texture" rating:7 image:nil location:locationDic2 address:@"820 N Central Ave, Glendale, CA 91203"];
+            Restaurant *rest3= [[Restaurant alloc] initWithName:@"Domino's" about:@"Gross. I hate it." rating:4 image:nil location:locationDic3 address:@"1136 S Colorado Blvd, Denver, CO 80246"];
+            Restaurant *rest4= [[Restaurant alloc] initWithName:@"Buffalo Wild Wings" about:@"It's okay" rating:5 image:nil location:locationDict4 address: @"142-C South Brand Boulevard, Glendale, CA 91205"];
+            Restaurant *rest5= [[Restaurant alloc] initWithName:@"LA Cafe" about:@"Almost perfect" rating:9 image:nil location:locationDict5 address: @"639 S Spring St, Los Angeles, CA 90014"];
             
 
 //            MyClass oClass = [[MyClass alloc] initWithName:@"Hot Wings" andAbout:@"This place has the best ranch!!"];
@@ -136,9 +136,10 @@ static NSString *const kRanchPList = @"Ranch.plist";
                     about: (NSString *) about
                     rating: (int) rating
                     image: (NSData*) image
-                    location: (NSDictionary*) location {
+                    location: (NSDictionary*) location
+                  address: (NSString *) address {
 
-    Restaurant *rest= [[Restaurant alloc] initWithName:name about:about rating:rating image:image location:location];
+    Restaurant *rest= [[Restaurant alloc] initWithName:name about:about rating:rating image:image location:location address: address];
     [self insertRestaurant: rest];
 
     [self save];

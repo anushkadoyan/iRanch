@@ -73,7 +73,7 @@
     NSString *longitudeString = [NSString stringWithFormat:@"%g\u00B0",
                                  newLocation.coordinate.longitude];
     
-    NSLog(@"lat:%@, long:%@",latitudeString,longitudeString);
+//    NSLog(@"lat:%@, long:%@",latitudeString,longitudeString);
 
     self.locationDict= [[NSDictionary alloc] initWithObjectsAndKeys:latitudeString, @"latitude",
                            longitudeString, @"longitude", nil];
@@ -83,7 +83,50 @@
 
     
 //    didn't work :(
-//    // Reverse Geocoding
+    // Reverse Geocoding
+    
+    
+    
+//    [self.geocoder reverseGeocodeLocation:newLocation completionHandler:^(NSArray *placemarks, NSError *error){
+//        CLPlacemark *placemark = placemarks[0];
+//        NSLog(@"Found %@", placemark.name);
+//        self.address = [NSString stringWithFormat:@"%@ %@\n%@ %@\n%@\n%@",
+//                                                         self.placemark.subThoroughfare, self.placemark.thoroughfare,
+//                                                         self.placemark.postalCode, self.placemark.locality,
+//                                                         self.placemark.administrativeArea,
+//         self.placemark.country];
+//    }];
+    [self.geocoder reverseGeocodeLocation: newLocation completionHandler:
+    
+    ^(NSArray *placemarks, NSError *error) {
+        
+        
+        
+        //Get nearby address
+        
+        CLPlacemark *placemark = [placemarks objectAtIndex:0];
+        
+        
+        
+        //String to hold address
+        
+        NSString *locatedAt = [[placemark.addressDictionary valueForKey:@"FormattedAddressLines"] componentsJoinedByString:@", "];
+        
+        
+        
+        //Print the location to console
+        
+        NSLog(@"I am currently at %@",locatedAt);
+        
+        self.address = locatedAt;
+        
+        //Set the label text to current location
+        
+        
+        
+        
+        
+    }];
 //    NSLog(@"Resolving the Address");
 //    [self.geocoder reverseGeocodeLocation:newLocation completionHandler:^(NSArray *placemarks, NSError *error) {
 //        NSLog(@"Found placemarks: %@, error: %@", placemarks, error);
@@ -98,12 +141,12 @@
 //            NSLog(@"error:%@", error.debugDescription);
 //        }
 //        NSString *returnAddress = self.address;
-//
-//        [self remainderOfMethodHereUsingReturnAddress:returnAddress];
+//        NSLog(@"%@",self.address);
+////        [self remainderOfMethodHereUsingReturnAddress:returnAddress];
 //
 //    } ];
-//    
-//    
+    
+    
     
     
 }
@@ -178,6 +221,8 @@
     picker.delegate = self;
     picker.allowsEditing = YES;
     picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    picker.allowsEditing = YES;
+
     [self presentViewController:picker animated:YES completion:NULL];
 }
 
@@ -189,7 +234,8 @@
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     
     [self.locationManager requestAlwaysAuthorization];
-    
+    self.geocoder = [[CLGeocoder alloc] init];
+
     [self.locationManager startUpdatingLocation];
     
 
