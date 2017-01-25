@@ -22,6 +22,7 @@
                     <connections>
                         <segue destination="Fyd-ue-rCn" kind="relationship" relationship="viewControllers" id="tkS-tk-YBk"/>
                         <segue destination="Uk9-He-aYf" kind="relationship" relationship="viewControllers" id="urx-i7-htL"/>
+                        <segue destination="rsf-0Y-r4N" kind="relationship" relationship="viewControllers" id="Wwb-fg-OGB"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vuh-zL-jVI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -67,7 +68,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oAK-Bn-koz" id="Uvd-hF-ySL">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
@@ -223,6 +224,10 @@
                                 <color key="textColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="addphot" translatesAutoresizingMaskIntoConstraints="NO" id="qzB-yv-Wso">
+                                <rect key="frame" x="56" y="210" width="264" height="189"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5/10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d0Z-6e-kcN">
                                 <rect key="frame" x="216" y="440" width="63" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -230,11 +235,7 @@
                                 <color key="textColor" red="0.20000000000000001" green="0.59999999999999998" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qzB-yv-Wso">
-                                <rect key="frame" x="56" y="210" width="264" height="189"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add an image:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rlp-ne-TEA">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tap to add an image:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rlp-ne-TEA">
                                 <rect key="frame" x="16" y="172" width="343" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -308,6 +309,31 @@
             </objects>
             <point key="canvasLocation" x="156" y="-878"/>
         </scene>
+        <!--You-->
+        <scene sceneID="A7i-4n-rDk">
+            <objects>
+                <viewController id="rsf-0Y-r4N" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0l8-E2-3T7"/>
+                        <viewControllerLayoutGuide type="bottom" id="W2s-1e-Cad"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SdV-tm-Sop">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1a3-Zf-mbN">
+                                <rect key="frame" x="74" y="51" width="226" height="125"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="You" image="neutral" selectedImage="neutral" id="Cpt-WJ-GLb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kaZ-18-7GG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="156" y="-167.76611694152925"/>
+        </scene>
         <!--Ranch View Controller-->
         <scene sceneID="oFX-Ge-n6Y">
             <objects>
@@ -365,6 +391,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="59" id="QYS-Dx-SmY"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -427,6 +454,8 @@
     <resources>
         <image name="List" width="25" height="25"/>
         <image name="MapMarker" width="25" height="25"/>
+        <image name="addphot" width="512" height="512"/>
+        <image name="neutral" width="25" height="25"/>
         <image name="thumbs up" width="1037" height="1298"/>
     </resources>
     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
