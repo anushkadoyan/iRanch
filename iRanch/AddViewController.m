@@ -78,8 +78,7 @@
     self.locationDict= [[NSDictionary alloc] initWithObjectsAndKeys:latitudeString, @"latitude",
                            longitudeString, @"longitude", nil];
     
-    [self.locationButton setTitle:@"Found" forState:(UIControlStateNormal)];
-    [self.locationManager stopUpdatingLocation];
+   
 
     
 //    didn't work :(
@@ -124,7 +123,8 @@
         
         
         
-        
+        [self.locationButton setTitle:locatedAt forState:(UIControlStateNormal)];
+        [self.locationManager stopUpdatingLocation];
         
     }];
 //    NSLog(@"Resolving the Address");
