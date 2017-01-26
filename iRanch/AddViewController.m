@@ -181,6 +181,8 @@
     NSString *newText = [[NSString alloc] initWithFormat:@"%d",numberAsInt];
     self.rateLabel.text = [NSString stringWithFormat:@"%@%@",newText,@"/10"];
     self.rating = [self.rateLabel.text intValue];
+    
+    
     if ([self.rateLabel.text intValue]==0) {
         self.rateLabelDesc.text = @"Ew";
 
@@ -201,10 +203,15 @@
         self.rateLabelDesc.text = @"Wow!";
 
     }
-    if([self.rateLabel.text intValue]<5) {
+    if([self.rateLabel.text intValue]<4) {
         [self.rateSlider setMinimumTrackTintColor:[UIColor redColor]];
 
     }
+    else if([self.rateLabel.text intValue]>=4 && [self.rateLabel.text intValue]<=6) {
+        [self.rateSlider setMinimumTrackTintColor:[UIColor orangeColor]];
+        
+    }
+    
     else {
         [self.rateSlider setMinimumTrackTintColor:[UIColor colorWithRed:0.2 green:0.6 blue:0.2 alpha:1.0] ];
 
